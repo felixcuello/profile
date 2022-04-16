@@ -10,11 +10,10 @@ all:
 clean: nvim_clean
 
 nvim_clean:
-	rm -rf /.config/nvim
+	rm -rf ~/.config/nvim/
 
 nvim_install: nvim_clean
 	mkdir -p ~/.config/
-	rm -rf ~/.config/nvim/
 	cp -r ./nvim ~/.config/
 
 # ---------------------------------------------------------------------------
