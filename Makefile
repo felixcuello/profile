@@ -33,7 +33,7 @@ ubuntu_install: nvim_install
 macos_banner:
 	@echo "Installing Profile For MacOS"
 
-macos_install: macos_banner macos_fonts macos_previous macos_install_nvim
+macos_install: macos_banner macos_previous macos_fonts macos_install_nvim
 
 macos_install_nvim: nvim_install
 
@@ -51,9 +51,9 @@ macos_font_roboto_mono:
 macos_fonts: macos_font_roboto_mono
 	@echo ">> Installing Fonts in ~/Library/Fonts/"
 
-macos_previous: macos_fonts
+macos_previous:
 	@echo ">> Installing software dependencies dependencies"
-	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	@brew install ctags neovim wget
 	@pip3 install neovim
 	@gem install solargraph
