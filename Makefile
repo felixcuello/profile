@@ -12,9 +12,11 @@ clean: nvim_clean
 nvim_clean:
 	rm -rf ~/.config/nvim/
 
-nvim_install: nvim_clean tmux
+nvim_install: nvim_clean
 	mkdir -p ~/.config/
 	cp -r ./nvim ~/.config/
+
+tmux_install:
 	cp ./tmux/.tmux.conf ~
 
 # ---------------------------------------------------------------------------
@@ -26,7 +28,7 @@ ubuntu_previous:
 	sudo n stable
 	gem install solargraph
 
-ubuntu_install: nvim_install
+ubuntu_install: nvim_install tmux_install
 
 # ---------------------------------------------------------------------------
 #   MacOS
@@ -34,7 +36,7 @@ ubuntu_install: nvim_install
 macos_banner:
 	@echo "Installing Profile For MacOS"
 
-macos_install: macos_banner macos_previous macos_fonts macos_npm_pyright macos_install_nvim macos_python macos_tools macos_oh_my_zsh
+macos_install: macos_banner macos_previous macos_fonts macos_npm_pyright macos_install_nvim macos_python macos_tools macos_oh_my_zsh tmux_install
 
 macos_install_nvim: nvim_install
 
