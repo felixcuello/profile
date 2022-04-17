@@ -53,6 +53,7 @@ macos_fonts: macos_font_roboto_mono
 
 macos_previous: macos_fonts
 	@echo ">> Installing software dependencies dependencies"
+	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	@brew install ctags neovim wget
 	@pip3 install neovim
 	@gem install solargraph
