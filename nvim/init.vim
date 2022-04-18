@@ -40,8 +40,6 @@ nnoremap <leader>fh        <cmd>Telescope help_tags<cr>
 " Show methods + functions
 nnoremap <leader>si        <cmd>TlistToggle<cr>
 
-" Toggle folding
-
 "
 " Plugins
 "
@@ -56,16 +54,18 @@ Plug 'https://github.com/neovim/nvim-lspconfig'             " LSP
 Plug 'https://github.com/williamboman/nvim-lsp-installer'   " LSP - Installer
 Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'              " nvim-cmp (dependency)
 Plug 'https://github.com/hrsh7th/nvim-cmp/'                 " nvim - completion
-Plug 'https://github.com/zivyangll/git-blame.vim'           " git blame
-Plug 'https://github.com/nvim-lua/plenary.nvim'             " git linker (dependency)
-Plug 'https://github.com/ruifm/gitlinker.nvim'              " git linker
-Plug 'https://github.com/airblade/vim-gitgutter'            " Show git differences inline
+Plug 'https://github.com/zivyangll/git-blame.vim'           " GIT > blame
+Plug 'https://github.com/nvim-lua/plenary.nvim'             " GIT > git-linker [dependency]
+Plug 'https://github.com/ruifm/gitlinker.nvim'              " GIT > Get links
+Plug 'https://github.com/airblade/vim-gitgutter'            " GIT > Show differences inline
+Plug 'https://github.com/mhinz/vim-signify'                 " GIT > Improve signs on the differences
 Plug 'https://github.com/yegappan/taglist'                  " Show functions
 Plug 'https://github.com/preservim/tagbar'                  " (same than above, perhaps it's required)
 Plug 'https://github.com/knsh14/vim-github-link'            " Get Current Branch Link
 Plug 'https://github.com/ervandew/supertab'                 " Use tab for completion
 Plug 'https://github.com/anuvyklack/pretty-fold.nvim'       " Pretty folding
-
+Plug 'https://github.com/jlcrochet/vim-ruby'                " Ruby > Improved
+Plug 'https://github.com/tpope/vim-rails'                   " Ruby > RAILS
 call plug#end()
 
 
