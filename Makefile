@@ -9,17 +9,51 @@ all:
 
 ifeq ($(OS),macos)
 terminal: brew macos-terminal
+tools: brew macos-tools
+fonts: macos-fonts
+rust: macos-rust
 else
 terminal: ubuntu-terminal
 endif
 
+# //////////////////////////////////////////////////////////////////
+# // MACOS                                                        //
+# //////////////////////////////////////////////////////////////////
 brew: # This is only for MacOS
 	@/bin/bash -c "$$(/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")"
+
+macos-rust: brew
+	@echo "Be sure you installed RUST first with rustup ( check: https://www.rust-lang.org/tools/install )"
+	@rustup component add rust-src
+	@brew install rust-analyzer
+
+macos-tools: brew
+	brew install wget
+
+macos-fonts: tools macos-font-roboto-mono macos-font-fira-code
+
+macos-font-fira-code:
+	wget --quiet https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip -O /tmp/FiraCode.zip
+	@rm -rf ~/Library/Fonts/FiraCode/
+	@mkdir -p ~/Library/Fonts/FiraCode/
+	@mv /tmp/FiraCode.zip ~/Library/Fonts/FiraCode/
+	@cd ~/Library/Fonts/FiraCode/ && unzip FiraCode.zip
+
+macos-font-roboto-mono:
+	wget --quiet https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip -O /tmp/RobotoMono.zip
+	@rm -rf ~/Library/Fonts/RobotoMono/
+	@mkdir -p ~/Library/Fonts/RobotoMono/
+	@mv /tmp/RobotoMono.zip ~/Library/Fonts/RobotoMono/
+	@cd ~/Library/Fonts/RobotoMono/ && unzip RobotoMono.zip
 
 macos-terminal:
 	brew tap wez/wezterm
 	brew install --cask wez/wezterm/wezterm || brew reinstall --cask wezterm
 
+
+# //////////////////////////////////////////////////////////////////
+# // UBUNTU                                                       //
+# //////////////////////////////////////////////////////////////////
 ubuntu-terminal:
 	@echo "Just use the terminal that comes with Ubuntu"
 
