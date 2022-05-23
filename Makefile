@@ -12,6 +12,7 @@ terminal: brew macos-terminal
 tools: brew macos-tools
 fonts: macos-fonts
 rust: macos-rust
+emacs: macos-emacs
 else
 terminal: ubuntu-terminal
 endif
@@ -20,7 +21,19 @@ endif
 # // MACOS                                                        //
 # //////////////////////////////////////////////////////////////////
 brew: # This is only for MacOS
-	@/bin/bash -c "$$(/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")"
+	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+macos-emacs-doom-requirements:
+	@brew install fd ripgrep
+
+macos-emacs: macos-emacs-doom-requirements
+	@brew install emacs
+	@rm -rf ~/.doom.d/
+	@rm -rf ~/.emacs.d/
+	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+	@yes | ~/.emacs.d/bin/doom install
+	@rm -rf ~/.doom.d/
+	@ln -s "$(shell pwd)/doom_emacs" ~/.doom.d  # This has to happen last
 
 macos-rust: brew
 	@echo "Be sure you installed RUST first with rustup ( check: https://www.rust-lang.org/tools/install )"
