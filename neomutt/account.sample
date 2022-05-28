@@ -1,0 +1,19 @@
+###############
+# Identity
+#
+# Run neomutt using this:
+#    neomutt -F .neomutt/account_sample.private
+#
+set realname = "Name Surname"
+set from = "account@gmail.com"
+set imap_user = "account@gmail.com"
+set imap_pass = "API_TOKEN"
+
+set folder = imaps://imap.gmail.com/
+set spoolfile = "+INBOX"
+
+set smtp_url="smtps://account@gmail.com@smtp.gmail.com:465/"
+set smtp_pass = "API_TOKEN"
+set smtp_authenticators="gssapi:login"
+
+source ./common.neomuttrc
