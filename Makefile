@@ -24,7 +24,7 @@ brew: # This is only for MacOS
 	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 macos-emacs-doom-requirements:
-	@brew install fd ripgrep
+	@brew install fd ripgrep mu
 
 macos-emacs: macos-emacs-doom-requirements
 	@brew install emacs
