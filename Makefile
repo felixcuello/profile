@@ -25,6 +25,7 @@ brew: # This is only for MacOS
 
 macos-emacs-doom-requirements:
 	@brew install fd ripgrep mu
+	@mu init --maildir=~/Maildir
 
 macos-emacs: macos-emacs-doom-requirements
 	@brew install emacs
