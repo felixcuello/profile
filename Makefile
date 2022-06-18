@@ -41,7 +41,7 @@ macos-rust: brew
 	@brew install rust-analyzer
 
 macos-tools: brew
-	brew install wget mc
+	brew install wget mc elinks
 
 macos-fonts: tools macos-font-roboto-mono macos-font-fira-code
 
