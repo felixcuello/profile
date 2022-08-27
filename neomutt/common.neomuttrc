@@ -1,0 +1,130 @@
+set pager_index_lines = 5
+
+set reverse_name
+
+unset record                # Gmail auto-stores in "+[Gmail].Sent Mail"
+unset trash                 # Unset, deletion will remove labels
+set postponed = "+[Gmail].Drafts"
+
+set mail_check = 60
+
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+unset markers
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+# multipart/alternative, prefer that alternative.
+alternative_order multipart/mixed multipart/related text/plain
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+set mailcap_path = ~/.neomutt/mailcap
+# auto_view text/html
+
+###############
+# Index settings
+#
+# set quit = ask-yes
+# set sort = threads
+# set sort=reverse-date-sent  # << Newest on top
+set sort = threads
+set sort_aux = reverse-last-date-received
+
+set delete
+
+# Remember to `mkdir -p ~/.neomutt/hcache` first:
+set header_cache= "~/.neomutt/hcache"
+
+###############
+# Message composition settings
+#
+set edit_headers
+
+# set editor = "emacsclient -a emacs -t"
+set editor = "vim"
+
+set mime_type_query_command = "xdg-mime query filetype"
+
+set new_mail_command = "osascript -e 'display notification \"GMAIL new email\" with title \"%S\"'"
+
+# msmtp is a solid SMTP client.
+# neomutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.
+set sendmail = "/usr/bin/msmtp"
+
+# lbdb is a versatile contact query tool.
+# Invoke via ctrl-t in an address prompt
+set query_command = "/usr/bin/lbdbq"
+
+###############
+# GnuPG
+#
+unset crypt_use_gpgme
+source /usr/local/share/doc/neomutt/samples/gpg.rc
+set pgp_default_key = "0x1234567890ABCDEF"
+set crypt_opportunistic_encrypt
+set postpone_encrypt
+
+
+##  COLORS
+## --------------------------------------------------------------------
+
+color index brightyellow default "~N" # new messages
+
+# Basics
+color normal        default             default
+color indicator     brightwhite         red
+color tree          default             default
+color status        brightgreen         blue
+color error         brightred           default
+color message       red                 default
+color signature     red                 default
+color attachment    yellow              default
+color search        brightyellow        red
+color tilde         brightmagenta       default
+color markers       red                 default
+color hdrdefault    cyan                default
+color bold          green               black
+color underline     yellow              black
+
+
+# Index
+color index_flags   black               white               ~D
+color index_flags   green               default             ~g
+color index_flags   brightgreen         default             ~G
+color index_author  brightdefault       color035            ~P
+color index_author  blue                brightred           ~F
+color index_author  yellow              default             ~l
+color index_flags   yellow              default             ~N
+color index_flags   yellow              default             ~l
+color index_date    cyan                default
+color index_size    cyan                default
+color index_number  green               default
+
+
+# Pager
+color header        brightcyan          default             '^From:'
+color header        brightyellow        default             '^Subject:'
+color header        black               brightgreen         '^User-Agent:.*Mutt'
+color header        black               green               '^User-Agent: Mozilla/5.0.*Linux'
+
+color body          brightcyan          default             "[-a-z_0-9.+]+@[-a-z_0-9.]+"
+color body          cyan                default             "((ftp|http|https)://|news:)[^ >)\"\t]+"
+color body          white               brightblue          "\\[[0-9]+\\]"
+color body          yellow              default             "\\[\\.\\.\\.?\\]"
+
+color quoted        magenta             default # Quoting Ebene 1
+color quoted1       red                 default # Quoting Ebene 2
+color quoted2       green               default # Quoting Ebene 3
+color quoted3       magenta             default # Quoting Ebene 4
+color quoted4       blue                default # Quoting Ebene 5
+color quoted5       cyan                default # Quoting Ebene 6
+color quoted6       green               default # Quoting Ebene 7
+color quoted7       red                 default # Quoting Ebene 8
+color quoted8       magenta             default # Quoting Ebene 9
+color quoted9       blue                default # Quoting Ebene 10

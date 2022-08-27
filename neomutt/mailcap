@@ -1,0 +1,8 @@
+text/html; elinks -dump %s ; copiousoutput
+application/octet-stream; open %s
+application/pdf; open -a Preview '%s'
+application/msword; open -a Preview '%s'
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; open -a Preview '%s'
+
+image/png; open %s
+image/*; open %s

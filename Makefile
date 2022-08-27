@@ -41,8 +41,9 @@ macos-rust: brew
 	@brew install rust-analyzer
 
 macos-tools: brew
-	brew install wget
+	brew install wget mc elinks
 
+# Remember to add: https://github.com/kencrocken/FiraCodeiScript.git
 macos-fonts: tools macos-font-roboto-mono macos-font-fira-code
 
 macos-font-fira-code:
