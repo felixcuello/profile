@@ -5,13 +5,14 @@ all:
 	@echo "Add the OS=macos or OS=ubuntu variable depending on the make you want to use."
 	@echo ""
 	@echo "make OS=macos terminal   # Will install terminal"
+	@echo "make OS=macos install    # Will install everything ;-)"
 	@echo ""
 
 ifeq ($(OS),macos)
+install: macos-install
 terminal: brew macos-terminal
 tools: brew macos-tools
 fonts: macos-fonts
-rust: macos-rust
 emacs: macos-emacs
 else
 terminal: ubuntu-terminal
@@ -20,6 +21,8 @@ endif
 # //////////////////////////////////////////////////////////////////
 # // MACOS                                                        //
 # //////////////////////////////////////////////////////////////////
+macos-install: brew macos-tools macos-fonts macos-emacs macos-terminal
+
 brew: # This is only for MacOS
 	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -35,11 +38,6 @@ macos-emacs: macos-emacs-doom-requirements
 	@rm -rf ~/.doom.d/
 	@ln -s "$(shell pwd)/doom_emacs" ~/.doom.d  # This has to happen last
 
-macos-rust: brew
-	@echo "Be sure you installed RUST first with rustup ( check: https://www.rust-lang.org/tools/install )"
-	@rustup component add rust-src
-	@brew install rust-analyzer
-
 macos-tools: brew
 	brew install wget mc elinks
 
@@ -50,8 +48,6 @@ macos-font-fira-code:
 	wget --quiet https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip -O /tmp/FiraCode.zip
 	@rm -rf ~/Library/Fonts/FiraCode/
 	@mkdir -p ~/Library/Fonts/FiraCode/
-	@mv /tmp/FiraCode.zip ~/Library/Fonts/FiraCode/
-	@cd ~/Library/Fonts/FiraCode/ && unzip FiraCode.zip
 
 macos-font-roboto-mono:
 	wget --quiet https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip -O /tmp/RobotoMono.zip
@@ -73,9 +69,7 @@ ubuntu-terminal:
 
 
 #----------------------------------------------------------------------------
-#----------------------------------------------------------------------------
 #  REDO EVERYTHING below this line
-#----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
 
 
