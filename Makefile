@@ -21,7 +21,7 @@ endif
 # //////////////////////////////////////////////////////////////////
 # // MACOS                                                        //
 # //////////////////////////////////////////////////////////////////
-macos-install: brew macos-tools macos-fonts macos-emacs macos-terminal macos-nvim
+macos-install: brew macos-tools macos-fonts macos-emacs macos-terminal macos-nvim macos-tmux
 
 brew: # This is only for MacOS
 	@echo "[CONFIG] brew"
@@ -45,12 +45,17 @@ macos-nvim:
 	@mkdir -p ~/.config/
 	rm -rf ~/.config/nvim && ln -s nvim ~/.config/nvim
 
+macos-tmux:
+	@echo "[CONFIG] tmux]"
+	@echo rm -f ~/.tmux.conf
+	@ln -s tmux/.tmux.conf ~/.tmux.conf
+
 macos_oh_my_zsh:
 	@sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 macos-tools: brew
 	@echo "[CONFIG] macos-tools"
-	brew install ag ctags elinks mc neomutt nvim ripgrep wget
+	brew install ag ctags elinks mc neomutt nvim ripgrep tmux wget
 
 # Remember to add: https://github.com/kencrocken/FiraCodeiScript.git
 macos-fonts: tools macos-font-roboto-mono macos-font-fira-code
