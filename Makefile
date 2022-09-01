@@ -33,12 +33,11 @@ macos-emacs-doom-requirements:
 
 macos-emacs: macos-emacs-doom-requirements
 	@echo "[CONFIG] doom-emacs"
-	@rm -f ~/.doom.d
+	@rm -f ~/.doom.d && ln -s "./doom_emacs" ~/.doom.d
 	@rm -rf ~/.emacs.d
 	@brew install emacs
 	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-	@yes | ~/.emacs.d/bin/doom install
-	@ln -s "$(shell pwd)/doom_emacs" ~/.doom.d  # This has to happen last
+	@yes | ~/.emacs.d/bin/doom install --no-config
 
 macos-nvim:
 	@echo "[CONFIG] nvim"
@@ -47,15 +46,15 @@ macos-nvim:
 
 macos-tmux:
 	@echo "[CONFIG] tmux]"
-	@echo rm -f ~/.tmux.conf
+	@rm -f ~/.tmux.conf
 	@ln -s tmux/.tmux.conf ~/.tmux.conf
 
-macos_oh_my_zsh:
+macos-oh-my-zsh:
 	@sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 macos-tools: brew
 	@echo "[CONFIG] macos-tools"
-	brew install ag ctags elinks mc neomutt nvim ripgrep tmux wget
+	brew install ctags elinks mc neomutt nvim ripgrep the_silver_searcher tmux wget
 
 # Remember to add: https://github.com/kencrocken/FiraCodeiScript.git
 macos-fonts: tools macos-font-roboto-mono macos-font-fira-code
