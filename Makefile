@@ -33,21 +33,22 @@ macos-emacs-doom-requirements:
 
 macos-emacs: macos-emacs-doom-requirements
 	@echo "[CONFIG] doom-emacs"
-	@rm -f ~/.doom.d && ln -s "./doom_emacs" ~/.doom.d
-	@rm -rf ~/.emacs.d
+	rm -f ~/.doom.d && ln -s "./doom_emacs" ~/.doom.d
+	rm -rf ~/.emacs.d
 	@brew install emacs
 	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 	@yes | ~/.emacs.d/bin/doom install --no-config
 
 macos-nvim:
-	@echo "[CONFIG] nvim"
+	@echo "[CONFIG] nvim -> Remember to run :PlugInstall later :-)"
+	@curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@mkdir -p ~/.config/
-	rm -rf ~/.config/nvim && ln -s nvim ~/.config/nvim
+	rm -f ~/.config/nvim && ln -s "$(shell pwd)/nvim" ~/.config/nvim
 
 macos-tmux:
 	@echo "[CONFIG] tmux]"
 	@rm -f ~/.tmux.conf
-	@ln -s tmux/.tmux.conf ~/.tmux.conf
+	@ln -s "$(shell pwd)/tmux/.tmux.conf" ~/.tmux.conf
 
 macos-oh-my-zsh:
 	@sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
