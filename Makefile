@@ -21,7 +21,7 @@ endif
 # //////////////////////////////////////////////////////////////////
 # // MACOS                                                        //
 # //////////////////////////////////////////////////////////////////
-macos-install: brew macos-tools macos-fonts macos-emacs macos-terminal macos-nvim macos-tmux
+macos-install: brew macos-tools macos-fonts macos-emacs macos-oh-my-zsh macos-terminal macos-nvim macos-tmux
 
 brew: # This is only for MacOS
 	@echo "[CONFIG] brew"
@@ -33,7 +33,7 @@ macos-emacs-doom-requirements:
 
 macos-emacs: macos-emacs-doom-requirements
 	@echo "[CONFIG] doom-emacs"
-	rm -f ~/.doom.d && ln -s "./doom_emacs" ~/.doom.d
+	rm -f ~/.doom.d && ln -s "$(shell pwd)/doom_emacs" ~/.doom.d
 	rm -rf ~/.emacs.d
 	@brew install emacs
 	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
@@ -52,6 +52,7 @@ macos-tmux:
 
 macos-oh-my-zsh:
 	@sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	@git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 macos-tools: brew
 	@echo "[CONFIG] macos-tools"
