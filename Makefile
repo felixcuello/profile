@@ -35,7 +35,7 @@ macos-emacs: macos-emacs-doom-requirements
 	@echo "[CONFIG] doom-emacs"
 	rm -f ~/.doom.d && ln -s "$(shell pwd)/doom_emacs" ~/.doom.d
 	rm -rf ~/.emacs.d
-	@brew install emacs
+	@brew install --cask emacs
 	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 	@yes | ~/.emacs.d/bin/doom install --no-config
 
