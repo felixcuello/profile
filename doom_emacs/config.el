@@ -70,7 +70,7 @@
                  ;; :family "Source Code Pro for Powerline"
                  ;; :family "Inconsolata for Powerline"
                  ;; :family "Space Mono for Powerline"
-                 :size 20
+                 :size 19
 ;                 :weight 'semi-light
                  )
       )
