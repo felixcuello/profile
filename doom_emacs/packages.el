@@ -14,12 +14,6 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
-(use-package-hook! company
-  :post-init
-  (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate)
-        company-idle-delay 0
-        company-show-numbers t))
-
 (doom! :input
        ;;chinese
        ;;japanese

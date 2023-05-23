@@ -36,6 +36,7 @@ macos-emacs: macos-emacs-doom-requirements
 	rm -f ~/.doom.d && ln -s "$(shell pwd)/doom_emacs" ~/.doom.d
 	rm -rf ~/.emacs.d
 	@brew install --cask emacs
+	@brew install solargraph # For LSP support for ruby
 	@git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 	@yes | ~/.emacs.d/bin/doom install --no-config
 

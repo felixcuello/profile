@@ -16,7 +16,6 @@
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
 (setq flycheck-gcc-language-standard "c++11")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; To use rben v
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -70,7 +69,7 @@
                  ;; :family "Source Code Pro for Powerline"
                  ;; :family "Inconsolata for Powerline"
                  ;; :family "Space Mono for Powerline"
-                 :size 19
+                 :size 18
 ;                 :weight 'semi-light
                  )
       )
@@ -83,7 +82,7 @@
 (global-set-key (kbd "C-<") 'dumb-jump-back)
 
 (global-set-key (kbd "C-b") 'counsel-buffer-or-recentf)
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-s") '+default/search-buffer)
 (global-set-key (kbd "C-o") 'treemacs-add-project)
 (global-set-key (kbd "C-n") 'evil-buffer-new)
 (global-set-key (kbd "C-p") 'projectile-find-file)
@@ -93,7 +92,8 @@
 (global-set-key (kbd "∂")   'mc/mark-next-like-this-word)
 (global-set-key (kbd "∑")   'kill-this-buffer)
 
-(global-set-key [s-mouse-1] '+fold/toggle)
+(global-set-key [S-mouse-1] '+lookup/definition)
+(global-set-key [S-mouse-3] '+lookup/references)
 
 ; Shortcuts
 

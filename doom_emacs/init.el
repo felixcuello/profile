@@ -14,12 +14,6 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
-(use-package-hook! company
-  :post-init
-  (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate)
-        company-idle-delay 0
-        company-show-numbers t))
-
 (doom! :input
        ;;chinese
        ;;japanese
@@ -42,7 +36,7 @@
        minimap           ; show a map of the code on the side
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ;; nav-flash         ; blink cursor line after big motions
-       ;;neotree           ; a project drawer, like NERDTree for vim
+       ;; neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        pretty-code       ; ligatures or substitute text with pretty symbols
