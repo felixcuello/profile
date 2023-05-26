@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
+  use('tpope/vim-fugitive')
   use({
       "kdheepak/lazygit.nvim",
       -- optional for floating window border decoration
