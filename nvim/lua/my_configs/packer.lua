@@ -9,13 +9,19 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-	require('telescope').setup {
-		pickers = {
-			buffers = {
-				sort_lastused = true,
-			},
-		},
-	}
+  require('telescope').setup {
+    defaults = {
+      layout_config = {  
+        horizontal = { width = 0.99 },
+        vertical = { height = 0.99 },
+      },
+    },
+    pickers = {
+      buffers = {
+        sort_lastused = true,
+      }, 
+    },
+  }
 
   use {
     'nvim-tree/nvim-tree.lua',
@@ -27,6 +33,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('tpope/vim-fugitive')
