@@ -1,13 +1,26 @@
 local lsp = require('lsp-zero')
 lsp.preset("recommended")
 
+------------------------------------------------------------------
+-- Servers installed
+------------------------------------------------------------------
 lsp.ensure_installed({
 	"tsserver",
 	"eslint",
-	"sumneko_lua",
+	"lua_ls",
 	"solargraph",
 	"clangd",
 })
+
+
+------------------------------------------------------------------
+-- Key Bindings
+------------------------------------------------------------------
+lsp.on_attach(function(client, bufnr)
+	local opts  = {buffer = bufnr, remap = false}
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+end)
+
 
 local cmp = require('cmp')
 
@@ -31,6 +44,12 @@ cmp.setup({
   },
 })
 
+
+
+------------------------------------------------------------------
+-- The following configuration enables any directory to be able
+-- to use LSP, otherwise it only works in .git projects
+------------------------------------------------------------------
 local function determine_root_dir()
     -- Use the current directory as the root directory
     return vim.fn.getcwd()
@@ -46,10 +65,9 @@ nvim_lsp.tsserver.setup {
     root_dir = determine_root_dir
 }
 
-nvim_lsp.clangd.setup {
+nvim_lsp.lua_ls.setup {
     root_dir = determine_root_dir
 }
-
 
 nvim_lsp.clangd.setup {
     root_dir = determine_root_dir
