@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+  -- MOST important one,  to install the other packages
 	use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
 
 	use {
@@ -16,11 +17,23 @@ return require('packer').startup(function(use)
 		},
 	}
 
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end
+  }
+
+  use('mbbill/undotree')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
 
+  ----------------------------------------------------
 	-- LSP
+  ----------------------------------------------------
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -45,6 +58,8 @@ return require('packer').startup(function(use)
 	----------------------------------------------------------
 	-- Themes
 	----------------------------------------------------------
-	use 'tanvirtin/monokai.nvim'
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+	use { 'rose-pine/neovim', as = 'rose-pine' }
+  use 'tanvirtin/monokai.nvim'
+  use 'Tsuzat/NeoSolarized.nvim'
 end)
