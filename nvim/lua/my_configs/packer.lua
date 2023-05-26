@@ -23,16 +23,6 @@ return require('packer').startup(function(use)
     },
   }
 
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-    config = function()
-      require("nvim-tree").setup {}
-    end
-  }
-
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -46,6 +36,12 @@ return require('packer').startup(function(use)
           "nvim-lua/plenary.nvim",
       },
   })
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
 
   ----------------------------------------------------
 	-- LSP
@@ -78,4 +74,6 @@ return require('packer').startup(function(use)
 	use { 'rose-pine/neovim', as = 'rose-pine' }
   use 'tanvirtin/monokai.nvim'
   use 'Tsuzat/NeoSolarized.nvim'
+  use { 'endel/vim-github-colorscheme', as = "github" }
+  use 'NLKNguyen/papercolor-theme'
 end)
