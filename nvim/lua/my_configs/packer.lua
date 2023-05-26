@@ -36,7 +36,15 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('tpope/vim-fugitive')
+  use('vim-airline/vim-airline')
+  use('vim-airline/vim-airline-themes')
+  use({
+      "kdheepak/lazygit.nvim",
+      -- optional for floating window border decoration
+      requires = {
+          "nvim-lua/plenary.nvim",
+      },
+  })
 
   ----------------------------------------------------
 	-- LSP

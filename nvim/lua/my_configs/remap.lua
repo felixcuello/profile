@@ -33,6 +33,10 @@ vim.keymap.set("n", "<C-x><C-F>", vim.cmd.Ex)
 -- Close other windows (emacs shortcut muscular memory)
 vim.keymap.set("n", "<C-x>1", "<C-w>o")
 
+-- Go to other window
+vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")
+
 -- GIT things
 vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")
 vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR><C-w><C-w>")
+vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit)
