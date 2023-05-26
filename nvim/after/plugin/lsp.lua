@@ -31,10 +31,26 @@ cmp.setup({
   },
 })
 
+local function determine_root_dir()
+    -- Use the current directory as the root directory
+    return vim.fn.getcwd()
+end
+
 local nvim_lsp = require('lspconfig')
 
-nvim_lsp.solargraph.setup{}
-nvim_lsp.tsserver.setup{}
-nvim_lsp.clangd.setup{}
-nvim_lsp.clangd.setup{}
+nvim_lsp.solargraph.setup {
+    root_dir = determine_root_dir
+}
 
+nvim_lsp.tsserver.setup {
+    root_dir = determine_root_dir
+}
+
+nvim_lsp.clangd.setup {
+    root_dir = determine_root_dir
+}
+
+
+nvim_lsp.clangd.setup {
+    root_dir = determine_root_dir
+}
