@@ -6,11 +6,12 @@ lsp.preset("recommended")
 ------------------------------------------------------------------
 lsp.ensure_installed({
 	"clangd",
-  "dockerls",
 	"eslint",
 	"lua_ls",
 	"solargraph",
 	"tsserver",
+  "dockerls",
+  "pyright",
 })
 
 
@@ -63,5 +64,6 @@ nvim_lsp.clangd.setup { root_dir = determine_root_dir }
 nvim_lsp.dockerls.setup { root_dir = determine_root_dir }
 nvim_lsp.eslint.setup { root_dir = determine_root_dir }
 nvim_lsp.lua_ls.setup { root_dir = determine_root_dir }
+nvim_lsp.pyright.setup { root_dir = determine_root_dir }
 nvim_lsp.solargraph.setup { root_dir = determine_root_dir }
 nvim_lsp.tsserver.setup { root_dir = determine_root_dir }
