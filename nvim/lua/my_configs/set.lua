@@ -1,5 +1,7 @@
 -- vim.opt.guicursor = ""
 
+vim.opt.guifont = "FiraCode Nerd Font Mono:h18"
+
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
