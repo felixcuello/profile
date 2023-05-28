@@ -1,3 +1,17 @@
+-- Neovide clipboard functions
+
+vim.g.neovide_input_use_logo = 1
+-- Allow clipboard copy
+vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-c>', "\"+y", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-c>', "\"+y", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-c>', "\"+y", { noremap = true, silent = true})
+-- Allow clipboard paste
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+
 -- Set <space> as the new leader key
 vim.g.mapleader = " "
 
@@ -8,7 +22,7 @@ vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")
 -- This is to keep the cursor where it is when doing "J"
 vim.keymap.set("n", "J", "mzJ`z")
 
--- This copies to the system clipboard
+-- This copies to the system clipboard [when using console]
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
@@ -19,9 +33,7 @@ end)
 
 -- Change the word that I am on
 vim.keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Change the word that I am on
-vim.keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Tree instead of the normal thing
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
