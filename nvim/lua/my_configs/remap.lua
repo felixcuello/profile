@@ -49,6 +49,7 @@ vim.keymap.set("n", "<C-x>1", "<C-w>o")
 vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")
 
 -- GIT things
+-- the gy to copy the remote git link is given by the 'gitlinker' package
 vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")
 vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit<CR><C-w><C-w>")
 vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit)
