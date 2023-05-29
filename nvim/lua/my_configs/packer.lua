@@ -42,10 +42,9 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional
     },
   }
-  use {
-    'ruifm/gitlinker.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-  }
+  -- This let me copy the git links with <leader>gy
+  use {'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim',}
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   ----------------------------------------------------
 	-- LSP
