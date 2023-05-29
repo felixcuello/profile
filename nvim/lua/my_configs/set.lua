@@ -2,6 +2,8 @@
 
 vim.opt.guifont = "FiraCode Nerd Font Mono:h18"
 
+vim.opt.smartcase = true
+
 vim.opt.nu = true
 vim.opt.relativenumber = false
 
