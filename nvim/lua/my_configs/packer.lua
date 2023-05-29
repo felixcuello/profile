@@ -73,10 +73,13 @@ return require('packer').startup(function(use)
 	----------------------------------------------------------
 	-- Themes
 	----------------------------------------------------------
-  use { "bluz71/vim-moonfly-colors", as = "moonfly" }
 	use { 'rose-pine/neovim', as = 'rose-pine' }
-  use 'tanvirtin/monokai.nvim'
-  use 'Tsuzat/NeoSolarized.nvim'
+  use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+  use { 'NLKNguyen/papercolor-theme' }
+  use { 'Tsuzat/NeoSolarized.nvim' }
+  use { 'ayu-theme/ayu-vim' }
   use { 'endel/vim-github-colorscheme', as = "github" }
-  use 'NLKNguyen/papercolor-theme'
+  use { 'nanotech/jellybeans.vim' }
+  use { 'tanvirtin/monokai.nvim' }
+  use { 'tomasr/molokai' }
 end)
