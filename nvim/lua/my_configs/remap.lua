@@ -48,6 +48,13 @@ vim.keymap.set("n", "<C-x>1", "<C-w>o")
 -- Go to other window
 vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")
 
+-- Run Competitive Programming tests
+vim.keymap.set("n", "<leader>cp", ":CompetiTestRun<CR>")
+
+-- Close current buffer
+vim.keymap.set("n", "<leader>bw", ":bw<Cr>")
+vim.keymap.set("n", "<D-w>", ":bw<Cr>")
+
 -- LSP Format
 vim.keymap.set("v", "<leader>ff", ":LspZeroFormat<Cr>")
 vim.keymap.set("v", "<D-f>", ":LspZeroFormat<Cr>")

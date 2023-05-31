@@ -2,16 +2,16 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- MOST important one,  to install the other packages
-	use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
+  use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
   require('telescope').setup {
     defaults = {
-      layout_config = {  
+      layout_config = {
         horizontal = { width = 0.99 },
         vertical = { height = 0.99 },
       },
@@ -19,20 +19,20 @@ return require('packer').startup(function(use)
     pickers = {
       buffers = {
         sort_lastused = true,
-      }, 
+      },
     },
   }
 
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('tpope/vim-fugitive')
   use({
-      "kdheepak/lazygit.nvim",
-      -- optional for floating window border decoration
-      requires = {
-          "nvim-lua/plenary.nvim",
-      },
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   })
   use {
     'nvim-tree/nvim-tree.lua',
@@ -40,45 +40,46 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional
     },
   }
-  use {'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim',} -- This let me copy the git links with <leader>gy
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
-  use { -- This changes the project directory automagically in Telescope YAAAY!
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {}
-    end
+  -- Copy git-links with <leader>gy
+  use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', }
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+  -- This changes the project directory automagically in Telescope YAAAY!
+  use { "ahmedkhalf/project.nvim" }
+  -- Status Line
+  use { 'ojroques/nvim-hardline' }
+  -- Competitive Programming Test
+  use { 'xeluxee/competitest.nvim', requires = 'MunifTanjim/nui.nvim', }
+
+
+  ----------------------------------------------------
+  -- LSP
+  ----------------------------------------------------
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      {
+        -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
+    }
   }
-  use {'ojroques/nvim-hardline'} -- Status line
 
-
-  ----------------------------------------------------
-	-- LSP
-  ----------------------------------------------------
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{                                      -- Optional
-			'williamboman/mason.nvim',
-			run = function()
-				pcall(vim.cmd, 'MasonUpdate')
-			end,
-			},
-		{'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},     -- Required
-		{'hrsh7th/cmp-nvim-lsp'}, -- Required
-		{'L3MON4D3/LuaSnip'},     -- Required
-		}
-	}
-
-	----------------------------------------------------------
-	-- Themes
-	----------------------------------------------------------
-	use { 'rose-pine/neovim', as = 'rose-pine' }
+  ----------------------------------------------------------
+  -- Themes
+  ----------------------------------------------------------
+  use { 'rose-pine/neovim', as = 'rose-pine' }
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   use { 'NLKNguyen/papercolor-theme' }
   use { 'Tsuzat/NeoSolarized.nvim' }
