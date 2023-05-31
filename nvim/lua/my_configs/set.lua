@@ -1,6 +1,5 @@
 -- vim.opt.guicursor = ""
-
-vim.opt.guifont = "FiraCode Nerd Font Mono:h16"
+vim.opt.guifont = "FiraCode Nerd Font Mono:h20"
 
 vim.opt.smartcase = true
 
