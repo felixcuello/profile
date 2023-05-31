@@ -26,8 +26,6 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('vim-airline/vim-airline')
-  use('vim-airline/vim-airline-themes')
   use('tpope/vim-fugitive')
   use({
       "kdheepak/lazygit.nvim",
@@ -50,6 +48,7 @@ return require('packer').startup(function(use)
       require("project_nvim").setup {}
     end
   }
+  use {'ojroques/nvim-hardline'} -- Status line
 
 
   ----------------------------------------------------
