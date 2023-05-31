@@ -17,7 +17,7 @@ endif
 # ------------------------------------------------
 #  MacOS
 # ------------------------------------------------
-macos-install: macos-dependencies macos-tmux macos-neovim macos-done
+macos-install: macos-dependencies macos-rbenv macos-tmux macos-neovim macos-done
 
 macos-dependencies: brew macos-wget
 
@@ -49,6 +49,13 @@ macos-neovim:
 	@mkdir -p ${HOME}/.config
 	@rm -f ${HOME}/.config/nvim
 	@ln -s ${HOME}/github/profile/nvim/ ${HOME}/.config/nvim
+
+macos-rbenv:
+	@echo "[INSTALLING] rbenv"
+	@brew install rbenv
+	@rbenv init
+	@echo "^^^^^^^^^^^^^^^^^^^^^ DO THIS"
+	@echo "Also take a look at this: https://thoughtbot.com/blog/using-rbenv-to-manage-rubies-and-gems"'
 
 macos-wget:
 	@echo "[INSTALLING] wget"
