@@ -1,7 +1,7 @@
 function colorize_this()
   -- require('monokai').setup { palette = require('monokai') } 
-  -- require('monokai').setup { palette = require('monokai').pro } 
-	require('monokai').setup { palette = require('monokai').ristretto }
+  require('monokai').setup { palette = require('monokai').pro } 
+	-- require('monokai').setup { palette = require('monokai').ristretto }
 	-- require('monokai').setup { palette = require('monokai').soda }
 	-- vim.cmd('colorscheme rose-pine')
 

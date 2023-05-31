@@ -2,15 +2,15 @@
 
 vim.g.neovide_input_use_logo = 1
 -- Allow clipboard copy
-vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true})
-vim.api.nvim_set_keymap('!', '<D-c>', "\"+y", { noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<D-c>', "\"+y", { noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<D-c>', "\"+y", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('!', '<D-c>', "\"+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<D-c>', "\"+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<D-c>', "\"+y", { noremap = true, silent = true })
 -- Allow clipboard paste
-vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 
 -- Set <space> as the new leader key
 vim.g.mapleader = " "
@@ -47,6 +47,10 @@ vim.keymap.set("n", "<C-x>1", "<C-w>o")
 
 -- Go to other window
 vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")
+
+-- LSP Format
+vim.keymap.set("v", "<leader>ff", ":LspZeroFormat<Cr>")
+vim.keymap.set("v", "<D-f>", ":LspZeroFormat<Cr>")
 
 -- GIT things
 -- the gy to copy the remote git link is given by the 'gitlinker' package

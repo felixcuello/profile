@@ -9,6 +9,8 @@ lsp.ensure_installed({
 	"eslint",
 	"lua_ls",
 	"solargraph",
+  "standardrb",
+  "rubocop",
 	"tsserver",
   "dockerls",
   "pyright",
@@ -40,6 +42,8 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<Down>'] = cmp.mapping.select_next_item(),
+    ['<Up>'] = cmp.mapping.select_prev_item(),
   },
   sources = {
     -- Add additional sources as needed
