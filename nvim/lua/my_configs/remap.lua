@@ -48,6 +48,10 @@ vim.keymap.set("n", "<C-x>1", "<C-w>o")
 -- Go to other window
 vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")
 
+-- LSP Format
+vim.keymap.set("v", "<leader>ff", ":LspZeroFormat<Cr>")
+vim.keymap.set("v", "<D-f>", ":LspZeroFormat<Cr>")
+
 -- GIT things
 -- the gy to copy the remote git link is given by the 'gitlinker' package
 vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")
