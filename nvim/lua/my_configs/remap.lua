@@ -26,11 +26,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
--- Format in lsp
-vim.keymap.set("v", "<leader>f", function()
-  vim.lsp.buf.format()
-end)
-
 -- Change the word that I am on
 vim.keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -56,8 +51,8 @@ vim.keymap.set("n", "<leader>bw", ":bw<Cr>")
 vim.keymap.set("n", "<D-w>", ":bw<Cr>")
 
 -- LSP Format
-vim.keymap.set("v", "<leader>ff", ":LspZeroFormat<Cr>")
-vim.keymap.set("v", "<D-f>", ":LspZeroFormat<Cr>")
+vim.keymap.set("v", "<leader>f", ":LspZeroFormat timeout=10000<Cr>")
+vim.keymap.set("v", "<D-f>", ":LspZeroFormat timeout=10000<Cr>")
 
 -- GIT things
 -- the gy to copy the remote git link is given by the 'gitlinker' package

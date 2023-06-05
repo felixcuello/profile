@@ -1,6 +1,9 @@
 local lsp = require('lsp-zero')
 lsp.preset("recommended")
 
+-- Increase the timeout value (in milliseconds)
+-- lsp.options.timeout = 10000 -- 10 seconds
+
 ------------------------------------------------------------------
 -- Servers installed
 ------------------------------------------------------------------
