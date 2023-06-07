@@ -79,7 +79,6 @@ return require('packer').startup(function(use)
   ----------------------------------------------------------
   -- Themes
   ----------------------------------------------------------
-  use { 'rose-pine/neovim', as = 'rose-pine' }
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   use { 'NLKNguyen/papercolor-theme' }
   use { 'Tsuzat/NeoSolarized.nvim' }
