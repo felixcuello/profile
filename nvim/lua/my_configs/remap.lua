@@ -31,6 +31,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 -- Change the word that I am on
 vim.keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("v", "<D-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Tree instead of the normal thing
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
