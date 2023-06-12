@@ -1,6 +1,8 @@
--- Neovide clipboard functions
-
 vim.g.neovide_input_use_logo = 1
+
+vim.keymap.set("n", "<D-a>", "ggVG")
+vim.keymap.set("v", "<D-a>", "<Esc>ggVG")
+
 -- Allow clipboard copy
 vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('!', '<D-c>', "\"+y", { noremap = true, silent = true })
