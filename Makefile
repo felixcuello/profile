@@ -17,7 +17,7 @@ endif
 # ------------------------------------------------
 #  MacOS
 # ------------------------------------------------
-macos-install: macos-dependencies macos-rbenv macos-tmux macos-neovim macos-fonts macos-done
+macos-install: macos-dependencies macos-rbenv macos-tmux macos-neovim macos-fonts macos-tools macos-done
 
 macos-dependencies: brew macos-wget
 
@@ -27,23 +27,15 @@ brew:
 	@(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/felix/.zprofile
 	@eval "$(/opt/homebrew/bin/brew shellenv)"
 
-macos-neovim:
-	# ----------------------------------------------------------------
-	@echo "[INSTALLING] neovim"
-	@brew install nvim
+macos-tools:
+	@echo "[INSTALLING] MacOS Tools"
+	@brew install lazydocker lazygit nvim neovide the_silver_searcher
 
+macos-neovim: macos-tools
 	# ----------------------------------------------------------------
 	@echo "[INSTALLING] packer"
 	@rm -rf ~/.local/share/nvim/site/pack/packer/
 	@git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-	# ----------------------------------------------------------------
-	@echo "[INSTALLING] neovide"
-	@brew install neovide
-
-	# ----------------------------------------------------------------
-	@echo "[INSTALLING] lazygit"
-	@brew install lazygit
 
 	# ----------------------------------------------------------------
 	@mkdir -p ${HOME}/.config
