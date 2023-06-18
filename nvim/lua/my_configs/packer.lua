@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     },
   }
 
+  use('voldikss/vim-floaterm')
   use('sindrets/diffview.nvim')
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
@@ -73,9 +74,20 @@ return require('packer').startup(function(use)
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
+      use({
+        'L3MON4D3/LuaSnip',
+        requires = 'rafamadriz/friendly-snippets',
+        config = function()
+          require('luasnip').config.set_config({
+            history = true,
+            updateevents = 'TextChanged,TextChangedI',
+          })
+          require('luasnip/loaders/from_vscode').load()
+        end,
+      })
     }
   }
+
 
   ----------------------------------------------------------
   -- Themes
