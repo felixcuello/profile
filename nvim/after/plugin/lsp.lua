@@ -12,7 +12,6 @@ lsp.ensure_installed({
 	"eslint",
 	"lua_ls",
 	"solargraph",
-  "rubocop",
 	"tsserver",
   "dockerls",
   "pyright",
