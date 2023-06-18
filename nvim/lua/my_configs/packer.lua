@@ -23,7 +23,9 @@ return require('packer').startup(function(use)
     },
   }
 
-  use('voldikss/vim-floaterm')
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
   use('sindrets/diffview.nvim')
   use('lewis6991/gitsigns.nvim')
   use('mbbill/undotree')
