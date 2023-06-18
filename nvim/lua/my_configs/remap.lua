@@ -1,5 +1,12 @@
 vim.g.neovide_input_use_logo = 1
 
+-- Close current buffer
+vim.keymap.set("", "<D-t>", ":FloatermToggle<Cr>")
+vim.keymap.set("i", "<D-t>", ":FloatermToggle<Cr>")
+vim.keymap.set("v", "<D-t>", ":FloatermToggle<Cr>")
+vim.keymap.set("n", "<D-t>", ":FloatermToggle<Cr>")
+vim.keymap.set("t", "<D-t>", "<C-\\><C-n>:FloatermToggle<Cr>")
+
 vim.keymap.set("n", "<D-a>", "ggVG")
 vim.keymap.set("v", "<D-a>", "<Esc>ggVG")
 
