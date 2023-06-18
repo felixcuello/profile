@@ -17,7 +17,7 @@ endif
 # ------------------------------------------------
 #  MacOS
 # ------------------------------------------------
-macos-install: macos-dependencies macos-rbenv macos-tmux macos-neovim macos-done
+macos-install: macos-dependencies macos-rbenv macos-tmux macos-neovim macos-fonts macos-done
 
 macos-dependencies: brew macos-wget
 
@@ -34,6 +34,7 @@ macos-neovim:
 
 	# ----------------------------------------------------------------
 	@echo "[INSTALLING] packer"
+	@rm -rf ~/.local/share/nvim/site/pack/packer/
 	@git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 	# ----------------------------------------------------------------
@@ -45,7 +46,6 @@ macos-neovim:
 	@brew install lazygit
 
 	# ----------------------------------------------------------------
-	@echo "[CONFIGURING] neovim"
 	@mkdir -p ${HOME}/.config
 	@rm -f ${HOME}/.config/nvim
 	@ln -s ${HOME}/github/profile/nvim/ ${HOME}/.config/nvim
@@ -53,9 +53,9 @@ macos-neovim:
 macos-rbenv:
 	@echo "[INSTALLING] rbenv"
 	@brew install rbenv
-	@rbenv init
-	@echo "^^^^^^^^^^^^^^^^^^^^^ DO THIS"
-	@echo "Also take a look at this: https://thoughtbot.com/blog/using-rbenv-to-manage-rubies-and-gems"'
+	@echo "rbenv init"
+	@echo "^^^^^^^^^^^^^^^^^^^^^ DO THIS AT SOME POINT"
+	@echo "Also take a look at this: https://thoughtbot.com/blog/using-rbenv-to-manage-rubies-and-gems"
 
 macos-wget:
 	@echo "[INSTALLING] wget"
@@ -67,9 +67,14 @@ macos-tmux:
 	@rm -f ~/.tmux.conf
 	@ln -s "$(shell pwd)/tmux/.tmux.conf" ~/.tmux.conf
 
+macos-fonts:
+	@wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip -o ~/Library/Fonts/
+	@unzip ~/Library/Fonts/FiraCode.zip
+	@rm ~/Library/Fonts/FiraCode.zip
+
 macos-done:
 	@echo ""
-	@echo "FINISHED!!
+	@echo "FINISHED!!"
 	@echo ""
 
 
