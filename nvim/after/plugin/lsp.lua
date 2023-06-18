@@ -12,13 +12,20 @@ lsp.ensure_installed({
 	"eslint",
 	"lua_ls",
 	"solargraph",
-  "standardrb",
   "rubocop",
 	"tsserver",
   "dockerls",
   "pyright",
 })
 
+-- When you don't have mason.nvim installed
+-- You'll need to list the servers installed in your system
+lsp.setup_servers({'tsserver', 'eslint', 'solargraph'})
+
+-- (Optional) Configure lua language server for neovim
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
 
 ------------------------------------------------------------------
 -- Key Bindings
@@ -51,6 +58,7 @@ cmp.setup({
   sources = {
     -- Add additional sources as needed
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
   },
 })
 
