@@ -1,3 +1,11 @@
+local vim = vim
+
+-- Enable autoread for files changed outside of Neovim
+vim.cmd([[autocmd FocusGained,BufEnter * checktime]])
+vim.cmd([[autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Press 'r' to reload." | echohl None]])
+vim.cmd([[autocmd FileChangedShellPost * redraw!]])
+vim.cmd([[autocmd FileChangedShellPost * if expand('<afile>') ==# bufname('#') | e | endif]])
+
 -- vim.opt.guicursor = ""
 vim.opt.guifont = "FiraCode Nerd Font Mono:h20"
 
