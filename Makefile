@@ -29,7 +29,7 @@ brew:
 
 macos-tools:
 	@echo "[INSTALLING] MacOS Tools"
-	@brew install lazydocker lazygit nvim neovide the_silver_searcher
+	@brew install lazydocker lazygit nvim neovide the_silver_searcher ripgrep
 
 macos-neovim: macos-tools
 	# ----------------------------------------------------------------
