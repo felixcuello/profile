@@ -80,16 +80,6 @@ _G.packer_plugins = {
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["NeoSolarized.nvim"] = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/NeoSolarized.nvim",
-    url = "https://github.com/Tsuzat/NeoSolarized.nvim"
-  },
-  ["ayu-vim"] = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/ayu-vim",
-    url = "https://github.com/ayu-theme/ayu-vim"
-  },
   catppuccin = {
     loaded = true,
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -130,16 +120,6 @@ _G.packer_plugins = {
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["jellybeans.vim"] = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/jellybeans.vim",
-    url = "https://github.com/nanotech/jellybeans.vim"
-  },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
-    url = "https://github.com/kdheepak/lazygit.nvim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -165,11 +145,6 @@ _G.packer_plugins = {
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
   },
-  moonfly = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/moonfly",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
-  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -180,10 +155,10 @@ _G.packer_plugins = {
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-hardline"] = {
+  ["nvim-linefly"] = {
     loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/nvim-hardline",
-    url = "https://github.com/ojroques/nvim-hardline"
+    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/nvim-linefly",
+    url = "https://github.com/bluz71/nvim-linefly"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -215,11 +190,6 @@ _G.packer_plugins = {
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["papercolor-theme"] = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/papercolor-theme",
-    url = "https://github.com/NLKNguyen/papercolor-theme"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -241,15 +211,9 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/Users/felix/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  undotree = {
-    loaded = true,
-    path = "/Users/felix/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,

@@ -1,4 +1,3 @@
--- https://github.com/nvim-telescope/telescope.nvim#pickers
 local builtin = require('telescope.builtin')
 
 -- We need this function to make ripgrep to use the directory of the file we have
@@ -12,9 +11,18 @@ function live_grep_git_dir()
   require('telescope.builtin').live_grep(opts)
 end
 
-vim.keymap.set('n', '<leader><leader>', builtin.git_files, {})
-vim.keymap.set("n", "<leader>/", ":lua live_grep_git_dir()<CR>")
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>si', builtin.treesitter, {})
-vim.keymap.set('n', '<leader>?', builtin.help_tags, {})
+require('telescope').setup {
+  defaults = {
+    layout_config = {
+      prompt_position = "bottom",
+      horizontal = { width = 0.99 },
+      vertical = { height = 0.99 },
+    },
+    path_display = "smart",
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true,
+    },
+  },
+}
