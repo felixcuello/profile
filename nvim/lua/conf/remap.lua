@@ -28,7 +28,6 @@ vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 vim.g.mapleader = " "                                                                 -- Set <space> as leader key
 vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                     -- Move code block up
 vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                                   -- Move code block down
-vim.keymap.set("n", "J", "mzJx`z")                                                    -- Join lines without moving the cursor
 vim.keymap.set("v", "<leader>f", ":LspZeroFormat timeout=10000<Cr>")                  -- Reformat with LSP
 vim.keymap.set("", "<C-t>", ":ToggleTerm direction=float<Cr>")                        -- Open Terminal
 vim.keymap.set("i", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
