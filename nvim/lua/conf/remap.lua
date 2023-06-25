@@ -1,4 +1,8 @@
 local builtin = require('telescope.builtin')                                          -- Required for telescope
+local vim = vim
+
+vim.keymap.set('n', '<Esc>', '<Esc><Esc>')  -- Autocomplete is annoying me
+vim.keymap.set('v', '<Esc>', '<Esc><Esc>')  -- Autocomplete is annoying me
 
 -----------------------------------------------------------------------------
 -- Neovide Copy/Paste -------------------------------------------------------
@@ -38,7 +42,9 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)                
 vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")                                       -- Go to other window
 vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
 vim.keymap.set("v", "<D-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
-vim.keymap.set("n", "<leader>bw", ":bw<Cr>")                                          -- Close buffer
+vim.keymap.set("n", "<C-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
+vim.keymap.set("v", "<C-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
+vim.keymap.set("n", "<leader>w", ":bw<Cr>")                                           -- Close buffer
 vim.keymap.set("n", "<D-w>", ":bw<Cr>")                                               -- Close buffer
 vim.keymap.set("n", "<C-x>1", "<C-w>o")                                               -- Close other windows (from emacs)
 vim.keymap.set("n", "<leader>cp", ":CompetiTestRun<CR>")                              -- Run competitive programming tests
