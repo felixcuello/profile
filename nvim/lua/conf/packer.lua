@@ -62,6 +62,6 @@ return require('packer').startup(function(use)
   -- use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   -- use { 'NLKNguyen/papercolor-theme' }
   -- use { 'Tsuzat/NeoSolarized.nvim' }
-  -- use { 'ayu-theme/ayu-vim' }
+  use { 'ayu-theme/ayu-vim' }
   -- use { 'nanotech/jellybeans.vim' }
 end)
