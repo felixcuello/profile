@@ -1,6 +1,8 @@
 local builtin = require('telescope.builtin')                                          -- Required for telescope
 local vim = vim
 
+vim.g.mapleader = " "                                                                 -- Set <space> as leader key
+
 vim.keymap.set('n', '<Esc>', '<Esc><Esc>')  -- Autocomplete is annoying me
 vim.keymap.set('v', '<Esc>', '<Esc><Esc>')  -- Autocomplete is annoying me
 
@@ -29,36 +31,37 @@ vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 
-vim.g.mapleader = " "                                                                 -- Set <space> as leader key
-vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                     -- Move code block up
-vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                                   -- Move code block down
-vim.keymap.set("v", "<leader>f", ":LspZeroFormat timeout=10000<Cr>")                  -- Reformat with LSP
 vim.keymap.set("", "<C-t>", ":ToggleTerm direction=float<Cr>")                        -- Open Terminal
 vim.keymap.set("i", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
-vim.keymap.set("v", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
-vim.keymap.set("n", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
-vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<Cr>")                            -- Close Terminal
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)                      -- Neovim Tree toggle (And opening where the file is)
-vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")                                       -- Go to other window
-vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
-vim.keymap.set("v", "<D-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
 vim.keymap.set("n", "<C-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
-vim.keymap.set("v", "<C-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
-vim.keymap.set("n", "<leader>w", ":bw<Cr>")                                           -- Close buffer
-vim.keymap.set("n", "<D-w>", ":bw<Cr>")                                               -- Close buffer
+vim.keymap.set("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>")              -- Kind of swiper in emacs
+vim.keymap.set("n", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
 vim.keymap.set("n", "<C-x>1", "<C-w>o")                                               -- Close other windows (from emacs)
-vim.keymap.set("n", "<leader>cp", ":CompetiTestRun<CR>")                              -- Run competitive programming tests
-vim.keymap.set('n', '<leader><leader>', builtin.git_files, {})                        -- Find files (it works better with project plugin)
+vim.keymap.set("n", "<D-a>", "ggVG")                                                  -- Select all text
+vim.keymap.set("n", "<D-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
+vim.keymap.set("n", "<D-w>", ":bw<Cr>")                                               -- Close buffer
 vim.keymap.set("n", "<leader>/", builtin.live_grep, {})                               -- Live Grep for content (works better with project)
+vim.keymap.set("n", "<leader>;", "")
+vim.keymap.set("n", "<leader>a", "ggVG")                                              -- Select all text
+vim.keymap.set("n", "<leader>cp", ":CompetiTestRun<CR>")                              -- Run competitive programming tests
+vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeRevealToggle)                         -- NeoTree toggle
+vim.keymap.set("n", "<leader>w", ":bw<Cr>")                                           -- Close buffer
+vim.keymap.set("n", "<leader>ww", "<C-w><C-w>")                                       -- Go to other window
+vim.keymap.set("n", "<leader>y", "\"+y")                                              -- Copy line to the clipboard
+vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<Cr>")                            -- Close Terminal
+vim.keymap.set("v", "<C-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
+vim.keymap.set("v", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
+vim.keymap.set("v", "<D-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
+vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                                   -- Move code block down
+vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                     -- Move code block up
+vim.keymap.set("v", "<leader>f", ":LspZeroFormat timeout=10000<Cr>")                  -- Reformat with LSP
+vim.keymap.set("v", "<leader>y", "\"+y")                                              -- Copy visual to the clipboard
+vim.keymap.set('n', '<leader><leader>', builtin.git_files, {})                        -- Find files (it works better with project plugin)
+vim.keymap.set('n', '<leader>bb', builtin.buffers, {})                                -- Show buffers
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})                             -- Find files
 vim.keymap.set('n', '<leader>si', builtin.treesitter, {})                             -- Show symbols/classes/variables/etc.
-vim.keymap.set('n', '<leader>bb', builtin.buffers, {})                                -- Show buffers
-vim.keymap.set("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>")              -- Kind of swiper in emacs
-vim.keymap.set("n", "<leader>a", "ggVG")                                              -- Select all text
-vim.keymap.set("n", "<leader>y", "\"+y")                                              -- Copy line to the clipboard
-vim.keymap.set("v", "<leader>y", "\"+y")                                              -- Copy visual to the clipboard
-vim.keymap.set("n", "<leader>;", "")
-
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 
 
 -- -- Allow clipboard copy
