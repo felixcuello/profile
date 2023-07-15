@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   use('bluz71/nvim-linefly')                                               -- Simple and fast status line
   use('airblade/vim-gitgutter')                                            -- See git changes on the left
   use('github/copilot.vim')                                                -- Copilot
+  use { 'numToStr/Comment.nvim' }                                          -- Add comments easily
   use { 'xeluxee/competitest.nvim', requires = 'MunifTanjim/nui.nvim', }   -- Competitive Programming
   use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', }      -- Copy git link with <leader>gy
   use { "akinsho/toggleterm.nvim", tag = '*', }                            -- Toggle a terminal
@@ -19,6 +20,15 @@ return require('packer').startup(function(use)
   use {                                                                    -- Telescope
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
   }
 
   --------------------------------------------------------------
