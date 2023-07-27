@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
   use('bluz71/nvim-linefly')                                               -- Simple and fast status line
   use('airblade/vim-gitgutter')                                            -- See git changes on the left
   use('github/copilot.vim')                                                -- Copilot
-  use { 'numToStr/Comment.nvim' }                                          -- Add comments easily
   use { 'xeluxee/competitest.nvim', requires = 'MunifTanjim/nui.nvim', }   -- Competitive Programming
   use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', }      -- Copy git link with <leader>gy
   use { "akinsho/toggleterm.nvim", tag = '*', }                            -- Toggle a terminal
