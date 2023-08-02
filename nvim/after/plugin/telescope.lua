@@ -13,12 +13,16 @@ end
 
 require('telescope').setup {
   defaults = {
+    layout_strategy = "vertical",
     layout_config = {
-      prompt_position = "bottom",
+      vertical = {
+        width = 0.99,
+        height = 0.99,
+        preview_height = 0.6,
+        preview_cutoff = 0
+      },
       horizontal = { width = 0.99 },
-      vertical = { height = 0.99 },
     },
-    path_display = "smart",
   },
   pickers = {
     buffers = {
