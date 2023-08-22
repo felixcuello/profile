@@ -31,6 +31,12 @@ vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 
+-- move buffers
+vim.keymap.set("n", "<M-LEFT>", ":bprevious<Cr>")                                     -- Move to previous buffer
+vim.keymap.set("n", "<M-RIGHT>", ":bnext<Cr>")                                        -- Move to next buffer
+vim.keymap.set("i", "<M-LEFT>", "<ESC>:bprevious<Cr>")                                     -- Move to previous buffer
+vim.keymap.set("i", "<M-RIGHT>", "<ESC>:bnext<Cr>")                                        -- Move to next buffer
+
 vim.keymap.set("", "<C-t>", ":ToggleTerm direction=float<Cr>")                        -- Open Terminal
 vim.keymap.set("i", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
 vim.keymap.set("n", "<C-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])  -- Change the word I am on (kinda multiple cursors)
