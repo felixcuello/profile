@@ -6,3 +6,5 @@ alias up="tmux attach -d -t tmux_up; clear"
 
 alias can="tmux new -s tmux_an"
 alias an="tmux attach -d -t tmux_an; clear"
+
+alias gl="git log --graph --oneline --decorate --all"
