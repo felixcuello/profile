@@ -3,7 +3,7 @@ local vim = vim
 ----------------------------------------------------------------
 -- Color, Font Face & Font Size
 ----------------------------------------------------------------
-vim.cmd('colorscheme ayu')                                           -- Color Scheme
+vim.cmd('colorscheme monokai_pro')                                   -- Color Scheme
 vim.opt.guifont = "FiraCode Nerd Font Mono:h19"                      -- Font
 
 ----------------------------------------------------------------

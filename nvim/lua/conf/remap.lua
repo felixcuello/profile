@@ -51,7 +51,7 @@ vim.keymap.set("n", "<D-w>", ":bw<Cr>")                                         
 vim.keymap.set("n", "<leader>/", builtin.live_grep, {})                               -- Live Grep for content (works better with project)
 vim.keymap.set("n", "<leader>;", "")
 vim.keymap.set("n", "<leader>a", "ggVG")                                              -- Select all text
-vim.keymap.set("n", "<leader>cp", ":CompetiTestRun<CR>")                              -- Run competitive programming tests
+vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>")                              -- Run competitive programming tests
 vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeFloatToggle)                          -- NeoTree toggle
 vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                           -- Close buffer
 vim.keymap.set("n", "<leader>y", "\"+y")                                              -- Copy line to the clipboard
