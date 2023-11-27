@@ -3,12 +3,13 @@ font:
   # Normal (roman) font face
   normal:
     family: "FiraCode Nerd Font Mono"
-    style: Medium
+    # Light, Retina, Medium, SemiBold, Bold
+    style: Light
 
   # Bold font face
   bold:
     family: "FiraCode Nerd Font Mono"
-    style: Bold
+    style: SemiBold
 
   # Italic font face
   italic:
