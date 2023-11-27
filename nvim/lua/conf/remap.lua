@@ -9,6 +9,7 @@ vim.keymap.set('v', '<Esc>', '<Esc><Esc>')  -- Autocomplete is annoying me
 -----------------------------------------------------------------------------
 -- Neovide Copy/Paste -------------------------------------------------------
 -----------------------------------------------------------------------------
+
 if vim.g.neovide then
   vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
   vim.keymap.set('c', '<D-v>', '<C-R>+')                                              -- Paste command mode
@@ -54,7 +55,6 @@ vim.keymap.set("n", "<leader>a", "ggVG")                                        
 vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>")                              -- Run competitive programming tests
 vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeFloatToggle)                          -- NeoTree toggle
 vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                           -- Close buffer
-vim.keymap.set("n", "<leader>y", "\"+y")                                              -- Copy line to the clipboard
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<Cr>")                            -- Close Terminal
 vim.keymap.set("v", "<C-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
 vim.keymap.set("v", "<C-t>", ":ToggleTerm direction=float<Cr>")                       -- Open Terminal
@@ -63,13 +63,12 @@ vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                             
 vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                     -- Move code block up
 vim.keymap.set("v", "<leader>f", ":LspZeroFormat timeout=10000<Cr>")                  -- Reformat with LSP
 vim.keymap.set("v", "<leader>y", "\"+y")                                              -- Copy visual to the clipboard
-vim.keymap.set('n', '<leader><leader>', builtin.git_files, {})                        -- Find files (it works better with project plugin)
 vim.keymap.set('n', '<leader>bb', builtin.buffers, {})                                -- Show buffers
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})                             -- Find files
+vim.keymap.set('n', '<leader><leader>', builtin.find_files, {})                       -- Find files
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})                              -- Find files (it works better with project plugin)
 vim.keymap.set('n', '<leader>si', builtin.treesitter, {})                             -- Show symbols/classes/variables/etc.
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-
 
 -- -- Allow clipboard copy
 -- vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true })

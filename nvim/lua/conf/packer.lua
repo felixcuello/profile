@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use { "akinsho/toggleterm.nvim", tag = '*', }                            -- Toggle a terminal
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- Folding plugin
   use {                                                                    -- Telescope
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {
