@@ -33,7 +33,7 @@ install_neovim: install_node
 
 install_tools:
 	@echo "[INSTALLING] Tools"
-	@brew install lazydocker lazygit the_silver_searcher wget
+	@brew install lazydocker lazygit the_silver_searcher wget neovide
 
 install_fonts:
 	@cp fonts/*.zip ~/Library/Fonts/
