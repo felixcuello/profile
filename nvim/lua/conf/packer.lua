@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
       "MunifTanjim/nui.nvim",
     }
   }
+  use('lervag/vimtex')
 
   --------------------------------------------------------------
   -- LSP this requires a particular section --------------------

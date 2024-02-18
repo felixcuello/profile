@@ -69,6 +69,8 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})                        
 vim.keymap.set('n', '<leader>si', builtin.treesitter, {})                             -- Show symbols/classes/variables/etc.
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'tv', ':VimtexView<Cr>')
+vim.keymap.set('n', 'tc', ':VimtexCompile<Cr>')
 
 -- -- Allow clipboard copy
 -- vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true })
