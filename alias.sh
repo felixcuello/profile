@@ -8,3 +8,5 @@ alias cpe="tmux new -s tmux_pe"
 alias pe="tmux attach -d -t tmux_pe; clear"
 
 alias gl="git log --graph --oneline --decorate --all"
+
+alias e=neovide
