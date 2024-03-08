@@ -68,4 +68,5 @@ return require('packer').startup(function(use)
   -- use { 'Tsuzat/NeoSolarized.nvim' }
   use { 'ayu-theme/ayu-vim' }
   -- use { 'nanotech/jellybeans.vim' }
+  use 'Mofiqul/dracula.nvim'
 end)

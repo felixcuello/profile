@@ -52,7 +52,7 @@ vim.keymap.set("n", "<D-w>", ":bw<Cr>")                                         
 vim.keymap.set("n", "<leader>/", builtin.live_grep, {})                               -- Live Grep for content (works better with project)
 vim.keymap.set("n", "<leader>;", "")
 vim.keymap.set("n", "<leader>a", "ggVG")                                              -- Select all text
-vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>")                              -- Run competitive programming tests
+vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>")                             -- Run competitive programming tests
 vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeFloatToggle)                          -- NeoTree toggle
 vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                           -- Close buffer
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<Cr>")                            -- Close Terminal
@@ -69,21 +69,10 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})                        
 vim.keymap.set('n', '<leader>si', builtin.treesitter, {})                             -- Show symbols/classes/variables/etc.
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'tv', ':VimtexView<Cr>')
-vim.keymap.set('n', 'tc', ':VimtexCompile<Cr>')
 
--- -- Allow clipboard copy
--- vim.api.nvim_set_keymap('', '<D-c>', "\"+y", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('!', '<D-c>', "\"+y", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('t', '<D-c>', "\"+y", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('v', '<D-c>', "\"+y", { noremap = true, silent = true })
--- -- Allow clipboard paste
--- vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
-
-
+-- LaTeX things
+vim.keymap.set('n', 'lv', ':VimtexView<Cr>')
+vim.keymap.set('n', 'lc', ':VimtexCompile<Cr>')
 
 -- -- GIT things
 -- -- the gy to copy the remote git link is given by the 'gitlinker' package
