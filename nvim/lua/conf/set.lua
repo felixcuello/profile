@@ -3,15 +3,16 @@ local vim = vim
 ----------------------------------------------------------------
 -- Color, Font Face & Font Size
 ----------------------------------------------------------------
--- vim.cmd('colorscheme monokai_pro')                                   -- Color Scheme
-vim.cmd('colorscheme dracula')                                   -- Color Scheme
-vim.opt.guifont = "FiraCode Nerd Font Mono:h19"                  -- Font
+vim.cmd('colorscheme monokai_pro')                               -- Color Scheme
+-- vim.cmd('colorscheme dracula')                                   -- Color Scheme
+vim.opt.guifont = "FiraCode Nerd Font Mono:h20"                  -- Font
 
 ----------------------------------------------------------------
 -- General Settings
 ----------------------------------------------------------------
 vim.opt.backup = false                                               -- Do not backup
-vim.opt.colorcolumn = "100"                                          -- Long column indicator
+vim.opt.colorcolumn = "120"                                          -- Long column indicator
+vim.cmd('highlight ColorColumn ctermbg=NONE guibg=#802000')
 vim.opt.expandtab = true                                             -- Use spaces instead of tabs
 vim.opt.hlsearch = true                                              -- Keep highlighted text when searching and after
 vim.opt.ignorecase = true                                            -- Ignore case when searching (use with smartcase)
