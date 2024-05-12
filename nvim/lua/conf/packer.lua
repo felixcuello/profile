@@ -63,10 +63,8 @@ return require('packer').startup(function(use)
   use { 'endel/vim-github-colorscheme', as = "github" }
   use { 'tanvirtin/monokai.nvim' }
   use { 'tomasr/molokai' }
-  -- use { "bluz71/vim-moonfly-colors", as = "moonfly" }
-  -- use { 'NLKNguyen/papercolor-theme' }
-  -- use { 'Tsuzat/NeoSolarized.nvim' }
   use { 'ayu-theme/ayu-vim' }
-  -- use { 'nanotech/jellybeans.vim' }
-  use 'Mofiqul/dracula.nvim'
+  use { 'Mofiqul/dracula.nvim' }
+  use { 'tiagovla/tokyodark.nvim' }
+  use { 'projekt0n/github-nvim-theme' }
 end)
