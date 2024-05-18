@@ -67,4 +67,5 @@ return require('packer').startup(function(use)
   use { 'Mofiqul/dracula.nvim' }
   use { 'tiagovla/tokyodark.nvim' }
   use { 'projekt0n/github-nvim-theme' }
+  use { 'justinsgithub/oh-my-monokai.nvim' }
 end)
