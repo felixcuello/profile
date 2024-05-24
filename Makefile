@@ -17,7 +17,7 @@ all:
 	@echo " make install_alacritty      # install alacritty"
 	@echo ""
 
-install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty
+install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle
 	@echo "[FINISHED] Everything installed 😀"
 
 install_neovim: install_node
@@ -45,6 +45,11 @@ install_tmux:
 	@brew install tmux
 	@rm -f ~/.tmux.conf
 	@ln -s "$(shell pwd)/tmux/.tmux.conf" ~/.tmux.conf
+
+# This is a tool to move windows around
+install_rectangle:
+	@echo "[INSTALLING] rectangle"
+	@brew install rectangle
 
 install_node:
 	@echo "[INSTALLING] Node.js"
