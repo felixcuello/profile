@@ -13,14 +13,14 @@ return require('packer').startup(function(use)
   use('airblade/vim-gitgutter')                                            -- See git changes on the left
   use('github/copilot.vim')                                                -- Copilot
   use { 'xeluxee/competitest.nvim', requires = 'MunifTanjim/nui.nvim', }   -- Competitive Programming
-  use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', }      -- Copy git link with <leader>gy
+  use { 'linrongbin16/gitlinker.nvim' }                                    -- Copy git link with <leader>gy
   use { "akinsho/toggleterm.nvim", tag = '*', }                            -- Toggle a terminal
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- Folding plugin
-  use {                                                                    -- Telescope
+  use {                                                                    -- Telescope (fuzzy finder)
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  use {
+  use {                                                                    -- NeoTree
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
@@ -29,7 +29,8 @@ return require('packer').startup(function(use)
       "MunifTanjim/nui.nvim",
     }
   }
-  use('lervag/vimtex')
+  use('lervag/vimtex')                                                     -- LaTeX
+  use { 'f-person/git-blame.nvim' }                                        -- Git blame
 
   --------------------------------------------------------------
   -- LSP this requires a particular section --------------------
