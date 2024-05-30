@@ -74,6 +74,12 @@ vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'lv', ':VimtexView<Cr>')
 vim.keymap.set('n', 'lc', ':VimtexCompile<Cr>')
 
+vim.keymap.set("v", "<leader>gy", ":GitLink<CR>")
+vim.keymap.set("n", "<leader>gy", ":GitLink<CR>")
+
+vim.keymap.set("v", "<leader>gb", ":GitLink blame<CR>")
+vim.keymap.set("n", "<leader>gb", ":GitLink blame<CR>")
+
 -- -- GIT things
 -- -- the gy to copy the remote git link is given by the 'gitlinker' package
 -- vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")
