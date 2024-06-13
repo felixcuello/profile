@@ -7,3 +7,12 @@ alias up="tmux attach -d -t tmux_up; clear"
 alias gl="git log --graph --oneline --decorate --all"
 
 alias e=neovide
+
+source <(fzf --zsh)
+
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt appendhistory
+
