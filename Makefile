@@ -10,6 +10,7 @@ all:
 	@echo " make install_neovim         # install neovim"
 	@echo " make install_tools          # install some of the tools I use :-)"
 	@echo " make install_fonts          # install fonts"
+	@echo " make install_fzf            # install fzf"
 	@echo " make install_tmux           # install tmux"
 	@echo " make install_node           # install Node.js"
 	@echo " make install_rbenv          # install rbenv"
@@ -17,7 +18,7 @@ all:
 	@echo " make install_alacritty      # install alacritty"
 	@echo ""
 
-install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle
+install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf
 	@echo "[FINISHED] Everything installed 😀"
 
 install_neovim: install_node
@@ -46,9 +47,13 @@ install_tmux:
 	@rm -f ~/.tmux.conf
 	@ln -s "$(shell pwd)/tmux/.tmux.conf" ~/.tmux.conf
 
+install_fzf:
+	@echo "[INSTALLING] fzf"
+	@brew install fzf
+
 # This is a tool to move windows around
 install_rectangle:
-	@echo "[INSTALLING] rectangle"
+	@echo "[INSTALLING] rectangle [change window sizes with keystrokes]"
 	@brew install rectangle
 
 install_node:

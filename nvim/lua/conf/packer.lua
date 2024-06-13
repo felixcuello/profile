@@ -69,4 +69,6 @@ return require('packer').startup(function(use)
   use { 'tiagovla/tokyodark.nvim' }
   use { 'projekt0n/github-nvim-theme' }
   use { 'justinsgithub/oh-my-monokai.nvim' }
+  use { 'navarasu/onedark.nvim' }
+  use { 'rayes0/blossom.vim' }                               -- light theme
 end)

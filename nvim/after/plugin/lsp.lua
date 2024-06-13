@@ -8,4 +8,6 @@ lsp.ensure_installed({})
 
 lsp.setup_servers({'eslint', 'solargraph'})
 
+require'lspconfig'.rubocop.setup{}
+
 lsp.setup()
