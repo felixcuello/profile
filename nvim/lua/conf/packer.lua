@@ -56,6 +56,9 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' },     -- Required
     }
   }
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }                 -- package required by LSP
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}   -- Bufferline (tabs)
+
 
   --------------------------------------------------------------
   -- Themes ----------------------------------------------------

@@ -80,6 +80,12 @@ vim.keymap.set("n", "<leader>gy", ":GitLink<CR>")
 vim.keymap.set("v", "<leader>gb", ":GitLink blame<CR>")
 vim.keymap.set("n", "<leader>gb", ":GitLink blame<CR>")
 
+-- Bufferline
+vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<C-n>", ":new<CR><C-w>o")
+vim.keymap.set("n", "<C-w>", ":bw<Cr>")                                           -- Close buffer
+
 -- -- GIT things
 -- -- the gy to copy the remote git link is given by the 'gitlinker' package
 -- vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")

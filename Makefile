@@ -16,9 +16,11 @@ all:
 	@echo " make install_rbenv          # install rbenv"
 	@echo " make install_ohmyzsh        # install oh-my-zsh"
 	@echo " make install_alacritty      # install alacritty"
+	@echo " make install_rectangle      # install rectangle"
+	@echo " make install_watchman       # install watchman"
 	@echo ""
 
-install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf
+install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman
 	@echo "[FINISHED] Everything installed 😀"
 
 install_neovim: install_node
@@ -70,6 +72,10 @@ install_rbenv:
 install_ohmyzsh:
 	@echo "[INSTALLING] oh-my-zsh"
 	@sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+install_watchman: # This is required by sorbet
+	@echo "[INSTALLING] watchman"
+	@brew install watchman
 
 install_alacritty:
 	@echo "[INSTALLING] alacritty"
