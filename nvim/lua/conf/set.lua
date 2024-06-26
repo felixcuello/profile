@@ -3,7 +3,9 @@ local vim = vim
 ----------------------------------------------------------------
 -- Color, Font Face & Font Size
 ----------------------------------------------------------------
-vim.cmd('colorscheme oh-my-monokai')                           -- Color Scheme
+-- vim.cmd('colorscheme oh-my-monokai')                        -- Color Scheme
+require('onedark').setup { style = 'darker' }
+require('onedark').load()
 vim.opt.guifont = "FiraCode Nerd Font Mono:h20"                -- Font
 
 ----------------------------------------------------------------
