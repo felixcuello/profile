@@ -56,8 +56,10 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' },     -- Required
     }
   }
-  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }                 -- package required by LSP
-  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}   -- Bufferline (tabs)
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }                               -- package required by LSP
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}   -- Bufferline (tabs)
+  use { 'CopilotC-Nvim/CopilotChat.nvim' }                                                -- Copilot Chat
+  use { 'kawre/leetcode.nvim' }                                                           -- LeetCode
 
 
   --------------------------------------------------------------
