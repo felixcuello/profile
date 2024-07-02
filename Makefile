@@ -39,12 +39,18 @@ install_tools:
 	@brew install lazydocker lazygit the_silver_searcher wget neovide
 
 install_fonts:
+	# FiraCode
 	@cp fonts/FiraCode.zip ~/Library/Fonts/
 	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/FiraCode.zip; cd -
 	@rm -f ~/Library/Fonts/FiraCode.zip
+	# Cascadia
 	@cp fonts/CascadiaCode.zip ~/Library/Fonts/
 	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/CascadiaCode.zip; cd -
 	@rm -f ~/Library/Fonts/CascadiaCode.zip
+	# Victor Mono Font [this includes handwriting ligatures]
+	@cp fonts/VictorMonoAll.zip ~/Library/Fonts/
+	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/VictorMonoAll.zip; cd -
+	@rm -f ~/Library/Fonts/VictorMonoAll.zip
 
 install_tmux:
 	@echo "[INSTALLING] tmux"

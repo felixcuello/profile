@@ -1,18 +1,18 @@
 [font]
-size = 18
+size = 19 
 
 [font.bold]
-family = "CaskaydiaCove Nerd Font Mono"
+family = "Victor Mono"
 style = "SemiBold"
 
 [font.bold_italic]
-family = "CaskaydiaCove Nerd Font Mono"
+family = "Victor Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "CaskaydiaCove Nerd Font Mono"
+family = "Victor Mono"
 style = "Italic"
 
 [font.normal]
-family = "CaskaydiaCove Nerd Font Mono"
+family = "Victor Mono"
 style = "Light"
