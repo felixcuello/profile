@@ -36,21 +36,24 @@ install_neovim: install_node
 
 install_tools:
 	@echo "[INSTALLING] Tools"
-	@brew install lazydocker lazygit the_silver_searcher wget neovide
+	@brew install lazydocker the_silver_searcher wget neovide git-delta
+	@rm -f ${HOME}/.gitconfig && ln -s $(PWD)/git/.gitconfig ${HOME}/.gitconfig
 
 install_fonts:
 	# FiraCode
 	@cp fonts/FiraCode.zip ~/Library/Fonts/
 	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/FiraCode.zip; cd -
 	@rm -f ~/Library/Fonts/FiraCode.zip
+
 	# Cascadia
 	@cp fonts/CascadiaCode.zip ~/Library/Fonts/
 	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/CascadiaCode.zip; cd -
 	@rm -f ~/Library/Fonts/CascadiaCode.zip
+
 	# Victor Mono Font [this includes handwriting ligatures]
-	@cp fonts/VictorMonoAll.zip ~/Library/Fonts/
-	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/VictorMonoAll.zip; cd -
-	@rm -f ~/Library/Fonts/VictorMonoAll.zip
+	@cp fonts/VictorMono.zip ~/Library/Fonts/
+	@cd ~/Library/Fonts/; yes A | unzip ~/Library/Fonts/VictorMono.zip; cd -
+	@rm -f ~/Library/Fonts/VictorMono.zip
 
 install_tmux:
 	@echo "[INSTALLING] tmux"
