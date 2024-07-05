@@ -7,7 +7,7 @@ vim.cmd('colorscheme tokyodark')                                     -- Color Sc
 -- vim.cmd('colorscheme oh-my-monokai')                              -- Color Scheme
 -- require('onedark').setup { style = 'darker' }
 -- require('onedark').load()
-vim.opt.guifont = "Victor Mono:h20"                                  -- Font
+vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
 ----------------------------------------------------------------
 -- General Settings
