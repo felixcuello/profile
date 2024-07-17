@@ -11,6 +11,7 @@ all:
 	@echo " make install_tools          # install some of the tools I use :-)"
 	@echo " make install_fonts          # install fonts"
 	@echo " make install_fzf            # install fzf"
+	@echo " make install_dbeaver        # install dbeaver community edition"
 	@echo " make install_tmux           # install tmux"
 	@echo " make install_node           # install Node.js"
 	@echo " make install_rbenv          # install rbenv"
@@ -20,7 +21,7 @@ all:
 	@echo " make install_watchman       # install watchman"
 	@echo ""
 
-install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman
+install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman install_dbeaver
 	@echo "[FINISHED] Everything installed 😀"
 
 install_neovim: install_node
@@ -88,6 +89,10 @@ install_ohmyzsh:
 install_watchman: # This is required by sorbet
 	@echo "[INSTALLING] watchman"
 	@brew install watchman
+
+install_dbeaver:
+	@echo "[INSTALLING] DBeaver community edition"
+	@brew install dbeaver-community
 
 install_alacritty:
 	@echo "[INSTALLING] alacritty"
