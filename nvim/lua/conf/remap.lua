@@ -53,7 +53,8 @@ vim.keymap.set("n", "<leader>/", builtin.live_grep, {})                         
 vim.keymap.set("n", "<leader>;", "")
 vim.keymap.set("n", "<leader>a", "ggVG")                                              -- Select all text
 vim.keymap.set("n", "<leader>cp", ":CompetiTest run<CR>")                             -- Run competitive programming tests
-vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeFloatToggle)                          -- NeoTree toggle
+-- vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeFloatToggle)                          -- NeoTree toggle
+vim.keymap.set("n", "<leader>e", vim.cmd.NeoTreeRevealToggle)                          -- NeoTree toggle
 vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                           -- Close buffer
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<Cr>")                            -- Close Terminal
 vim.keymap.set("v", "<C-d>", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])   -- Change the word I am on (kinda multiple cursors)
