@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')                                           -- Git signs on the left
   use('ahmedkhalf/project.nvim')                                           -- Automatically change directory based on the project
   use('tpope/vim-fugitive')                                                -- Git stuff (including left symbols)
+  -- *IMPORTANT*
+  -- When tehre's a problem opening a file it might be treesitter
+  -- You have to run :TSUpdate to install the missing ependencies
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })            -- Better syntax highlighting and parser
   use('bluz71/nvim-linefly')                                               -- Simple and fast status line
   use('airblade/vim-gitgutter')                                            -- See git changes on the left
