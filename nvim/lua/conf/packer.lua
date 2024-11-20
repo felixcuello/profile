@@ -73,15 +73,24 @@ return require('packer').startup(function(use)
   --------------------------------------------------------------
   -- Themes ----------------------------------------------------
   --------------------------------------------------------------
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use { 'endel/vim-github-colorscheme', as = "github" }
-  use { 'tanvirtin/monokai.nvim' }
-  use { 'tomasr/molokai' }
-  use { 'ayu-theme/ayu-vim' }
-  use { 'Mofiqul/dracula.nvim' }
+  --- Dark Themes
+  use { 'scottmckendry/cyberdream.nvim' }
   use { 'tiagovla/tokyodark.nvim' }
-  use { 'projekt0n/github-nvim-theme' }
+  use { 'olimorris/onedarkpro.nvim', as = 'onedarkpro' }
+  use { 'bluz71/vim-moonfly-colors', as = 'moonfly' }
+  use { 'sainnhe/sonokai' }
   use { 'justinsgithub/oh-my-monokai.nvim' }
+  use { 'tanvirtin/monokai.nvim' }
   use { 'navarasu/onedark.nvim' }
-  use { 'rayes0/blossom.vim' }                               -- light theme
+  use { 'tomasr/molokai' }
+  use { 'Mofiqul/dracula.nvim' }
+  use { 'ayu-theme/ayu-vim' }
+
+  --- Light Themes
+  use { 'rayes0/blossom.vim' }
+
+  --- Dark/Light Themes
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'endel/vim-github-colorscheme', as = 'github' }
+  use { 'projekt0n/github-nvim-theme' }
 end)
