@@ -86,6 +86,21 @@ vim.keymap.set("n", "<tab>", ":BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-tab>", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<C-n>", ":new<CR><C-w>o")
 
+if vim.g.neovide then
+    local map = vim.keymap.set
+    map({ "n", "v" }, "<C-=>", function()
+        vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.02
+    end, { desc = "Increase Neovide scale factor" })
+
+    map({ "n", "v" }, "<C-->", function()
+        vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.02
+    end, { desc = "Decrease Neovide scale factor" })
+
+    map({ "n", "v" }, "<C-0>", function()
+        vim.g.neovide_scale_factor = 1
+    end, { desc = "Reset Neovide scale factor" })
+end
+
 -- -- GIT things
 -- -- the gy to copy the remote git link is given by the 'gitlinker' package
 -- vim.keymap.set("n", "<leader>gb", ":G blame<CR><C-w><C-w>")
