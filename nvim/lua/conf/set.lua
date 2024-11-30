@@ -14,6 +14,7 @@ vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 ----------------------------------------------------------------
 vim.opt.backup = false                                               -- Do not backup
 vim.opt.colorcolumn = "120"                                          -- Long column indicator
+vim.opt.textwidth = 120                                              -- Text width
 vim.cmd('highlight ColorColumn ctermbg=NONE guibg=#802000')
 vim.opt.expandtab = true                                             -- Use spaces instead of tabs
 vim.opt.hlsearch = true                                              -- Keep highlighted text when searching and after
