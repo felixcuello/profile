@@ -34,6 +34,10 @@ vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 
+-- Copy current filename
+vim.keymap.set('n', '<leader>cl', ':let @+ = expand("%:.")<CR>')
+vim.keymap.set('n', '<leader>co', ':let @+ = expand("%")<CR>')
+
 -- move buffers
 vim.keymap.set("n", "<M-LEFT>", ":bprevious<Cr>")                                     -- Move to previous buffer
 vim.keymap.set("n", "<M-RIGHT>", ":bnext<Cr>")                                        -- Move to next buffer
