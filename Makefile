@@ -17,11 +17,12 @@ all:
 	@echo " make install_rbenv          # install rbenv"
 	@echo " make install_ohmyzsh        # install oh-my-zsh"
 	@echo " make install_alacritty      # install alacritty"
+	@echo " make install_kitty          # install kitty"
 	@echo " make install_rectangle      # install rectangle"
 	@echo " make install_watchman       # install watchman"
 	@echo ""
 
-install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman install_dbeaver
+install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman install_dbeaver install_kitty
 	@echo "[FINISHED] Everything installed 😀"
 
 install_neovim: install_node
@@ -102,3 +103,10 @@ install_alacritty:
 	@echo "[CONFIGURING] neovim"
 	@rm -f ~/.config/alacritty/
 	@ln -s ${HOME}/github/profile/alacritty/ ${HOME}/.config/alacritty
+
+install_kitty:
+	@echo "[INSTALLING] kitty"
+	@brew install kitty
+	@echo "[CONFIGURING] kitty"
+	@rm -f ~/.config/kitty/
+	@ln -s ${HOME}/github/profile/kitty/ ${HOME}/.config/kitty
