@@ -8,6 +8,7 @@ all:
 	@echo ""
 	@echo " make install_everything     # install everything"
 	@echo " make install_neovim         # install neovim"
+	@echo " make install_lsp_servers    # install LSP servers"
 	@echo " make install_tools          # install some of the tools I use :-)"
 	@echo " make install_fonts          # install fonts"
 	@echo " make install_fzf            # install fzf"
@@ -25,7 +26,7 @@ all:
 install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman install_dbeaver install_kitty
 	@echo "[FINISHED] Everything installed 😀"
 
-install_neovim: install_node
+install_neovim: install_node install_lsp_servers
 	@echo "[INSTALLING] nvim ripgrep"
 	@brew install nvim ripgrep
 	@echo "[INSTALLING] typescript-language-server"
@@ -37,6 +38,21 @@ install_neovim: install_node
 	@mkdir -p ${HOME}/.config
 	@rm -f ${HOME}/.config/nvim
 	@ln -s ${HOME}/github/profile/nvim/ ${HOME}/.config/nvim
+
+install_lsp_servers:
+	@echo "[LSP] Installing LSP servers"
+	@echo "  - clangd [part of llvm"
+	@brew install llvm
+	@echo "  - docker language server"
+	@brew install dockerfile-language-server
+	@echo "  - gopls"
+	@brew install gopls
+	@echo "  - pyright"
+	@brew install pyright
+	@echo "  - solargraph"
+	@brew install solargraph
+	@echo "  - typescript-language-server"
+	@brew install typescript-language-server
 
 install_tools:
 	@echo "[INSTALLING] Tools"
