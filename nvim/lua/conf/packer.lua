@@ -6,7 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')                                            -- Package manager
   use('lewis6991/gitsigns.nvim')                                           -- Git signs on the left
-  use('ahmedkhalf/project.nvim')                                           -- Automatically change directory based on the project
+--  use('ahmedkhalf/project.nvim')                                           -- Automatically change directory based on the project
   use('tpope/vim-fugitive')                                                -- Git stuff (including left symbols)
   -- *IMPORTANT*
   -- When tehre's a problem opening a file it might be treesitter
@@ -66,7 +66,10 @@ return require('packer').startup(function(use)
   }
   use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }                               -- package required by LSP
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}   -- Bufferline (tabs)
-  use { 'CopilotC-Nvim/CopilotChat.nvim' }                                                -- Copilot Chat
+  use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'main'
+  }-- Copilot Chat
   use { 'kawre/leetcode.nvim' }                                                           -- LeetCode
 
 
@@ -85,6 +88,7 @@ return require('packer').startup(function(use)
   use { 'tomasr/molokai' }
   use { 'Mofiqul/dracula.nvim' }
   use { 'ayu-theme/ayu-vim' }
+  use { 'ofirgall/ofirkai.nvim' }
 
   --- Light Themes
   use { 'rayes0/blossom.vim' }
