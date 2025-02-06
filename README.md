@@ -15,10 +15,6 @@ All the dependencies are managed by `make`
  💡 INSTALLERS-A-LA-CARTE 🚀
 ---------------------------------------------------------------------------
 
----------------------------------------------------------------------------
- 💡 INSTALLERS-A-LA-CARTE 🚀
----------------------------------------------------------------------------
-
  make install_everything     # install everything
  make install_neovim         # install neovim
  make install_lsp_servers    # install LSP servers
