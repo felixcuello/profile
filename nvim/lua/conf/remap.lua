@@ -75,8 +75,12 @@ vim.keymap.set('n', '<leader>si', builtin.treesitter, {})                       
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 
--- LaTeX things
-vim.keymap.set('n', 'lv', ':VimtexView<Cr>')
+-- Copilot
+vim.keymap.set('n', 'cc', ':CopilotChat ')                                            -- Open Copilot chat
+vim.keymap.set('v', 'cc', ':CopilotChat ')                                            -- Open Copilot chat
+vim.keymap.set('v', 'cx', ':CopilotChatExplain<Cr>')                                  -- Open Copilot chat
+vim.keymap.set('v', 'cr', ':CopilotChat If you think there is a better way, can you please rewrite this code in a better way?<Cr>') -- Open Copilot chat
+
 vim.keymap.set('n', 'lc', ':VimtexCompile<Cr>')
 
 vim.keymap.set("v", "<leader>gy", ":GitLink<CR>")
