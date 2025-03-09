@@ -5,6 +5,7 @@ alias cup="tmux new -s tmux_up"
 alias up="tmux attach -d -t tmux_up; clear"
 
 alias gl="git log --graph --oneline --decorate --all"
+alias gc="git commit -v"  # verbose commit (you can also configure this git config --global commit.verbose true)
 
 alias e=neovide
 
