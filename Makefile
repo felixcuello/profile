@@ -41,17 +41,19 @@ install_neovim: install_node install_lsp_servers
 
 install_lsp_servers:
 	@echo "[LSP] Installing LSP servers"
-	@echo "  - clangd [part of llvm"
+	@echo "  - clangd [part of llvm package]"
 	@brew install llvm
-	@echo "  - docker language server"
+	@echo "  - docker language server [Dockerfile LSP]"
 	@brew install dockerfile-language-server
-	@echo "  - gopls"
+	@echo "  - gopls [Go LSP]"
 	@brew install gopls
-	@echo "  - pyright"
+	@echo "  - pyright [Python LSP]"
 	@brew install pyright
-	@echo "  - solargraph"
+	@echo "  - solargraph [Ruby LSP]"
+	@brew install texlab
+	@echo "  - texlab [LaTeX LSP]"
 	@brew install solargraph
-	@echo "  - typescript-language-server"
+	@echo "  - typescript-language-server [TypeScript LSP]"
 	@brew install typescript-language-server
 
 install_tools:
