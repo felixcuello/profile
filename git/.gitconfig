@@ -1,5 +1,6 @@
 [core]
     pager = delta
+	editor = nvim
 
 [interactive]
     diffFilter = delta --color-only
@@ -22,3 +23,5 @@
 [user]
 	name = Felix
 	email = felix.cuello@gmail.com
+[commit]
+	verbose = true
