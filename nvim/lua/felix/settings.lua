@@ -1,14 +1,5 @@
 local vim = vim
 
-----------------------------------------------------------------
--- Color, Font Face & Font Size
-----------------------------------------------------------------
-vim.cmd('colorscheme ofirkai')                                    -- Color Scheme
--- vim.cmd('colorscheme cyberdream')                                 -- Color Scheme
--- vim.cmd('colorscheme tokyodark')                                  -- Color Scheme
--- vim.cmd('colorscheme oh-my-monokai')                              -- Color Scheme
--- require('onedark').setup { style = 'darker' }
--- require('onedark').load()
 vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
 ----------------------------------------------------------------
