@@ -1,5 +1,6 @@
 return {
   "ibhagwan/fzf-lua",
+  lazy = false,
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   -- or if using mini.icons/mini.nvim
@@ -15,8 +16,7 @@ return {
     { "<C-s>", "<Cmd>FzfLua blines<CR>", desc = 'Search current file' },
     { "<leader>si", ":FzfLua lsp_workspace_symbols<Cr>", desc = "Find symbols in the current file" },
     { "<leader>bb", "<Cmd>FzfLua buffers<Cr>", desc = 'Show buffers' },
-
-    -- { "<leader>gb", "<Cmd>FzfLua git_branches<Cr>", desc = 'Show git branches' },
-    -- { "<leader>gc", "<Cmd>FzfLua git_commits<Cr>", desc = 'Show git commits' },
+    { "<leader>gb", "<Cmd>FzfLua git_branches<Cr>", desc = 'Show git branches' },
+    { "<leader>bl", "<Cmd>FzfLua git_blame<Cr>", desc = 'Show git branches' },
   }
 }
