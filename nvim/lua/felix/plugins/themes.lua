@@ -3,7 +3,7 @@ return {
   {
     'ofirgall/ofirkai.nvim',
     config = function()
-      vim.cmd('colorscheme ofirkai')
+      vim.cmd('colorscheme ofirkai-darkblue')
     end,
     -- opts = {},
     -- dependencies = {},

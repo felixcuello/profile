@@ -26,7 +26,10 @@ all:
 install_everything: install_neovim install_tools install_fonts install_tmux install_node install_rbenv install_ohmyzsh install_alacritty install_rectangle install_fzf install_watchman install_dbeaver install_kitty
 	@echo "[FINISHED] Everything installed 😀"
 
-install_neovim: install_node install_lsp_servers
+install_neovim: install_node install_lsp_servers install_fzf
+	@echo "[REMOVING] Old neovim packages"
+	@rm -rf .cache/nvim
+	@rm -rf .local/share/nvim/
 	@echo "[INSTALLING] nvim ripgrep"
 	@brew install nvim ripgrep
 	@echo "[INSTALLING] typescript-language-server"
@@ -49,10 +52,12 @@ install_lsp_servers:
 	@brew install gopls
 	@echo "  - pyright [Python LSP]"
 	@brew install pyright
-	@echo "  - solargraph [Ruby LSP]"
-	@brew install texlab
 	@echo "  - texlab [LaTeX LSP]"
+	@brew install texlab
+	@echo "  - solargraph [Ruby LSP]"
 	@brew install solargraph
+	@echo "  - ruby-lsp [Ruby LSP]"
+	@brew install ruby-lsp
 	@echo "  - typescript-language-server [TypeScript LSP]"
 	@brew install typescript-language-server
 

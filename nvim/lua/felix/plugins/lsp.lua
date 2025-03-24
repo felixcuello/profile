@@ -89,8 +89,7 @@ return {
 
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'solargraph',
-          'tsserver',
+          'ruby_lsp',
           'rubocop',
         },
         handlers = {
