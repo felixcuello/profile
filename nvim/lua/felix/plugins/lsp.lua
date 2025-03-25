@@ -91,6 +91,8 @@ return {
         ensure_installed = {
           'ruby_lsp',
           'rubocop',
+          'texlab',
+          'dockerls',
         },
         handlers = {
           -- this first function is the "default handler"
