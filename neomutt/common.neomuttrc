@@ -64,11 +64,11 @@ set query_command = "/usr/bin/lbdbq"
 ###############
 # GnuPG
 #
-unset crypt_use_gpgme
-source /usr/local/share/doc/neomutt/samples/gpg.rc
-set pgp_default_key = "0x1234567890ABCDEF"
-set crypt_opportunistic_encrypt
-set postpone_encrypt
+# unset crypt_use_gpgme
+# source /usr/local/share/doc/neomutt/samples/gpg.rc
+# set pgp_default_key = "0x1234567890ABCDEF"
+# set crypt_opportunistic_encrypt
+# set postpone_encrypt
 
 
 ##  COLORS
@@ -97,7 +97,7 @@ color underline     yellow              black
 color index_flags   black               white               ~D
 color index_flags   green               default             ~g
 color index_flags   brightgreen         default             ~G
-color index_author  brightdefault       color035            ~P
+color index_author  default             color035            ~P
 color index_author  blue                brightred           ~F
 color index_author  yellow              default             ~l
 color index_flags   yellow              default             ~N
