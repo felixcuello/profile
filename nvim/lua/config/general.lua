@@ -2,19 +2,23 @@ local vim = vim
 
 vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
+vim.cmd('set number')
+vim.cmd('colorscheme cyberdream')
+
 ----------------------------------------------------------------
 -- General Settings
 ----------------------------------------------------------------
 vim.opt.backup = false                                               -- Do not backup
 vim.opt.colorcolumn = "120"                                          -- Long column indicator
 vim.opt.textwidth = 120                                              -- Text width
-vim.cmd('highlight ColorColumn ctermbg=NONE guibg=#802000')
+
+vim.cmd('highlight ColorColumn ctermbg=NONE guibg=#200090')
+
 vim.opt.expandtab = true                                             -- Use spaces instead of tabs
 vim.opt.hlsearch = true                                              -- Keep highlighted text when searching and after
 vim.opt.ignorecase = true                                            -- Ignore case when searching (use with smartcase)
 vim.opt.incsearch = true                                             -- Incremental search
 vim.opt.isfname:append("@-@")                                        -- How to behave with weird filenames
-vim.opt.nu = true                                                    -- Show line numbers
 vim.opt.relativenumber = false                                       -- I have mixed feelings, for now it's disabled
 vim.opt.scrolloff = 5                                                -- Do not wait until the end of the screen to scroll
 vim.opt.shiftwidth = 2                                               -- How many charaters used to indent the code
@@ -37,3 +41,4 @@ vim.cmd([[autocmd FocusGained,BufEnter * checktime]])
 vim.cmd([[autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Press 'r' to reload." | echohl None]])
 vim.cmd([[autocmd FileChangedShellPost * redraw!]])
 vim.cmd([[autocmd FileChangedShellPost * if expand('<afile>') ==# bufname('#') | e | endif]])
+
