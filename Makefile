@@ -30,6 +30,8 @@ install_neovim: install_node install_lsp_servers install_fzf
 	@echo "[REMOVING] Old neovim packages"
 	@rm -rf .cache/nvim
 	@rm -rf .local/share/nvim/
+	@echo "[INSTALLING] nvim bat" # https://github.com/sharkdp/bat
+	@brew install nvim bat
 	@echo "[INSTALLING] nvim ripgrep"
 	@brew install nvim ripgrep
 	@echo "[INSTALLING] typescript-language-server"
@@ -63,7 +65,7 @@ install_lsp_servers:
 
 install_tools:
 	@echo "[INSTALLING] Tools"
-	@brew install lazydocker the_silver_searcher wget neovide git-delta
+	@brew install lazydocker the_silver_searcher wget neovide git-delta bat
 	@rm -f ${HOME}/.gitconfig && ln -s $(PWD)/git/.gitconfig ${HOME}/.gitconfig
 
 install_fonts:
