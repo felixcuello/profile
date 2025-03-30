@@ -37,7 +37,7 @@ return {
           },
         },
         buffers = {
-          theme = "ivy",
+          theme = "dropdown",
           layout_config = {
             width = 0.95, -- Adjust the width (% of the screen)
           },
