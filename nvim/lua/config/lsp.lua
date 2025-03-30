@@ -1,17 +1,6 @@
-vim.lsp.enable({
-  'clangd',
-  'lua-language-server',
-  'ruby_lsp',
-})
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
+vim.lsp.enable({ 'clangd' })
+vim.lsp.enable({ 'lua-language-server' })
+vim.lsp.enable({ 'ruby_lsp' })
 
 -- menu: show completion menu
 -- popup: Show extra information about the currently selected
@@ -19,3 +8,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- noinsert: Do not insert any text for a match until the user selects
 vim.cmd("set completeopt+=menu,popup,preview,noinsert")
 vim.lsp.completion.enable()
+
+
+-- vim.lsp.start({
+--   name = 'ruby_lsp',
+--   cmd = { 'BUNDLE_GEMFILE=Gemfile.34 ' + vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
+--   on_attach = function(client, bufnr)
+--     vim.lsp.completion.enable(true, client.id, bufnr, {
+--       autotrigger = true,
+--       convert = function(item)
+--         return { abbr = item.label:gsub('%b()', '') }
+--       end,
+--     })
+--   end,
+-- })
