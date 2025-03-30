@@ -23,17 +23,23 @@ return {
         },
       },
       pickers = {
+        live_grep = {
+          theme = "dropdown",
+          layout_config = {
+            width = 0.95, -- Adjust the width (% of the screen)
+          },
+        },
         find_files = {
           theme = "dropdown",
           layout_config = {
-            width = 0.85, -- Adjust the width (% of the screen)
+            width = 0.95, -- Adjust the width (% of the screen)
             height = 0.5, -- Adjust the height (% of the screen)
           },
         },
         buffers = {
-          theme = "dropdown",
+          theme = "ivy",
           layout_config = {
-            width = 0.85, -- Adjust the width (% of the screen)
+            width = 0.95, -- Adjust the width (% of the screen)
           },
           sort_lastused = true,
           previewer = false,
