@@ -12,9 +12,19 @@ vim.keymap.set('n', '<leader>q', function()
   end
 end, { desc = "Conditional buffer action for <leader>q" })
 
-vim.keymap.set("v", "<leader>y", "\"+y")                                         -- 'Copy to MacOS clipboard')
-vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                      -- 'Close buffer')
-vim.keymap.set("n", "<leader>Q", ":bd!<Cr>")                                     -- 'Force close buffer')
-vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                              -- 'Move block down')
-vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                -- 'Move block up')
-vim.keymap.set("n", "<C-x>1", "<C-w>o")                                          -- 'Close all other windows')
+vim.keymap.set("n", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
+vim.keymap.set("v", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
+
+vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                      -- Close buffer
+vim.keymap.set("n", "<leader>Q", ":bd!<Cr>")                                     -- Force close buffer
+
+vim.keymap.set("v", "<leader>y", "\"+y")                                         -- Copy to MacOS clipboard
+
+vim.keymap.set("v", "<S-DOWN>", ":m '>+1<CR>gv=gv")                              -- Move block down
+vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                                -- Move block up
+
+vim.keymap.set("n", "<C-x>1", "<C-w>o")                                          -- Close all other windows
+
+vim.keymap.set("n", "<leader>gy", ":GitBlameCopyFileURL<Cr>")                    -- Copy file URL to clipboard
+vim.keymap.set("v", "<leader>gy", ":GitBlameCopyFileURL<Cr>")                    -- Copy file URL to clipboard
+vim.keymap.set("n", "<leader>gc", ":GitBlameOpenCommitURL<Cr>")                  -- Open commit URL

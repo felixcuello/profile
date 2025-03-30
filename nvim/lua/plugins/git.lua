@@ -1,17 +1,5 @@
 return {
-  {
-    'tpope/vim-fugitive',
-    lazy = false
-  },
+  { 'tpope/vim-fugitive', lazy = false },      -- Git commands in nvim
   { 'airblade/vim-gitgutter', lazy = false },  -- Show git signs on the left
-  {
-    'ruifm/gitlinker.nvim',             -- Copy git link with <leader>gy
-    lazy = false,
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = { },
-    config = function()
-      require('gitlinker').setup {}
-    end,
-  },
-  { 'f-person/git-blame.nvim' }
+  { 'f-person/git-blame.nvim', lazy = false }, -- Show blame inline
 }
