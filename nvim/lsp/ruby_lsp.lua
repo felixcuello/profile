@@ -1,13 +1,5 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        ruby_lsp = {
-          mason = false,
-          cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
-        },
-      },
-    },
-  },
+  cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
+  root_markers = { '.ruby-version', '.git' },
+  filetypes = { 'ruby' },
 }

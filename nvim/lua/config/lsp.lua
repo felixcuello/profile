@@ -1,11 +1,9 @@
 vim.lsp.enable({ 'clangd' })
 vim.lsp.enable({ 'lua-language-server' })
 vim.lsp.enable({ 'ruby_lsp' })
+vim.lsp.enable({ 'texlab' })
+vim.lsp.enable({ 'dockerls' })
 
--- menu: show completion menu
--- popup: Show extra information about the currently selected
--- preview: Show extra information about the currently selected
--- noinsert: Do not insert any text for a match until the user selects
 vim.lsp.start({
   on_attach = function(client, bufnr)
     vim.lsp.completion.enable(true, client.id, bufnr, {
@@ -17,5 +15,8 @@ vim.lsp.start({
   end,
 })
 
+-- menu: show completion menu
+-- popup: Show extra information about the currently selected
+-- preview: Show extra information about the currently selected
+-- noinsert: Do not insert any text for a match until the user selects
 vim.cmd("set completeopt+=menu,popup,preview,noinsert")
-vim.lsp.completion.enable()
