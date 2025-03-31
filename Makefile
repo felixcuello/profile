@@ -34,8 +34,6 @@ install_neovim: install_node install_lsp_servers install_fzf
 	@brew install nvim bat
 	@echo "[INSTALLING] nvim ripgrep"
 	@brew install nvim ripgrep
-	@echo "[INSTALLING] typescript-language-server"
-	@brew install typescript-language-server
 	@echo "[INSTALLING] packer"
 	@rm -rf ~/.local/share/nvim/site/pack/packer/
 	@git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim

@@ -1,16 +1,16 @@
-vim.lsp.enable({ 'clangd' })
-vim.lsp.enable({ 'lua-language-server' })
-vim.lsp.enable({ 'ruby_lsp' })
-vim.lsp.enable({ 'texlab' })
-vim.lsp.enable({ 'dockerls' })
+-- vim.lsp.enable({ 'clangd' })
+-- vim.lsp.enable({ 'lua-language-server' })
+-- vim.lsp.enable({ 'ruby_lsp' })
+-- vim.lsp.enable({ 'texlab' })
+-- vim.lsp.enable({ 'dockerls' })
 
 vim.lsp.start({
   on_attach = function(client, bufnr)
     vim.lsp.completion.enable(true, client.id, bufnr, {
       autotrigger = true,
---      convert = function(item)
---        return { abbr = item.label:gsub('%b()', '') }
---      end,
+      convert = function(item)
+        return { abbr = item.label:gsub('%b()', '') }
+      end,
     })
   end,
 })
