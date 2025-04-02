@@ -1,30 +1,42 @@
 --
--- VSCode-like LightBulb for LSP Code Actions
+-- LightBulb shows a light bulb whenever there's a code action available
 --
 return {
-  "kosayoda/nvim-lightbulb",
+  'kosayoda/nvim-lightbulb',
   lazy = false,
-  event = "LspAttach",
-  dependencies = { "antoinemadec/FixCursorHold.nvim" },
-  config = function()
-    require("nvim-lightbulb").setup({
-      sign = {
-        enabled = true,
-        priority = 10,
-      },
-      float = {
-        enabled = false,
-      },
-      virtual_text = {
-        enabled = false,
-      },
-      status_text = {
-        text = "💡",
-        text_unavailable = "",
-      },
-    })
-  end,
-  keys = {
-    { "<leader>ca", "<cmd>lua require('nvim-lightbulb').get_actions()<CR>", desc = "Code Action" },
+  opts = {
+    enabled = true,
+
+    show_file_path = true,
+    show_symbols = true,
+
+    colors = {
+      path = '', -- You can customize colors like #c946fd
+      file_name = '',
+      symbols = '',
+    },
+
+    icons = {
+      file_icon_default = '',
+      seperator = '>',
+      editor_state = '●',
+      lock_icon = '',
+    },
+
+    exclude_filetype = {
+      'help',
+      'startify',
+      'dashboard',
+      'packer',
+      'neogitstatus',
+      'NvimTree',
+      'Trouble',
+      'alpha',
+      'lir',
+      'Outline',
+      'spectre_panel',
+      'toggleterm',
+      'qf',
+    }
   },
 }

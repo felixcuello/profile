@@ -1,9 +1,9 @@
 {
   "CopilotChat.nvim": { "branch": "main", "commit": "23162ada224e858d0d60bbbf2a35f9b6c98427ce" },
-  "FixCursorHold.nvim": { "branch": "master", "commit": "1900f89dc17c603eec29960f57c00bd9ae696495" },
   "ayu-vim": { "branch": "master", "commit": "01faacb4cb76e8cf72ad9858c581d80876260ab3" },
   "blink.cmp": { "branch": "main", "commit": "49f211fe5d729df53df4c042d7c3464cf47d199e" },
   "blossom.vim": { "branch": "main", "commit": "80a34aaa203a6d4f32e2969d616b220426aefb1a" },
+  "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "copilot.vim": { "branch": "release", "commit": "a9228e015528c9307890c48083c925eb98a64a79" },
   "cyberdream.nvim": { "branch": "main", "commit": "f36d7991b6373ebda9cfca20030aa1fca7328ea8" },
   "dracula.nvim": { "branch": "main", "commit": "96c9d19ce81b26053055ad6f688277d655b3f7d2" },
@@ -30,10 +30,10 @@
   "sonokai": { "branch": "master", "commit": "9679341d4141ed81376f2bdf5e69b78dc348d212" },
   "telescope-themes": { "branch": "main", "commit": "9b7c368b83b82b53c0a6e9e977f8329e5f1fe269" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
-  "toggleterm.nvim": { "branch": "main", "commit": "9a88eae817ef395952e08650b3283726786fb5fb" },
   "tokyodark.nvim": { "branch": "master", "commit": "cc70a2fb809d5376f2bd8e5836f9bb3f5fb8ef43" },
   "vim-fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
   "vim-gitgutter": { "branch": "main", "commit": "6620e5fbbe6a28de0bfed081f5bd2767023b7eea" },
   "vim-github-colorscheme": { "branch": "master", "commit": "0a660059cae852c7f90951dea7474cfb1485558e" },
-  "vim-moonfly-colors": { "branch": "master", "commit": "d34794072c878510ac8f65bbbaa390f57dd6ad8d" }
+  "vim-moonfly-colors": { "branch": "master", "commit": "d34794072c878510ac8f65bbbaa390f57dd6ad8d" },
+  "winbar.nvim": { "branch": "main", "commit": "13739fdb31be51a1000486189662596f07a59a31" }
 }
