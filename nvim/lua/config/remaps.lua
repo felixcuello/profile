@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------------------------
 --- Keymaps
 ---------------------------------------------------------------------------------------------------------------------
+local vim = vim
+
 vim.keymap.set('n', '<leader>q', function()
   -- closes the current buffer
   -- if the current buffer is a neotree buffer, it will toggle the neotree

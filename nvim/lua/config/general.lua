@@ -3,7 +3,7 @@ local vim = vim
 vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
 vim.cmd('set number')
-vim.cmd('colorscheme cyberdream')
+vim.cmd('colorscheme ofirkai-darkblue')
 
 ----------------------------------------------------------------
 -- General Settings
