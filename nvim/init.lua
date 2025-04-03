@@ -22,4 +22,4 @@ require('lsp.luals')                               -- Lua language server
 require('lsp.clangd')                              -- C/C++ language server
 require('lsp.pyright')                             -- Python language server
 require('lsp.ruby_lsp')                            -- Ruby language server
-require('lsp.solargraph')                          -- Ruby language server
+require('lsp.rust_analyzer')                       -- Rust language server

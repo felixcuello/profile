@@ -1,7 +1,7 @@
 vim.lsp.config['ruby_lsp'] = {
-  cmd = { 'ruby-lsp', 'stdio' },
+  cmd = { 'ruby-lsp' },
   root_markers = { '.ruby-version', 'Gemfile' },
-  filetypes = { 'rb', 'erb', 'Gemfile' },
+  filetypes = { 'ruby' },
 }
 
 vim.lsp.enable('ruby_lsp')
