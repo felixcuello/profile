@@ -10,6 +10,7 @@ vim.lsp.enable('luals')                             -- LUA LSP server
 vim.lsp.enable('ruby_lsp')                          -- Ruby language server
 vim.lsp.enable('clangd')                            -- C/C++ language server
 vim.lsp.enable('pyright')                           -- Python language server
+vim.lsp.enable('gopls')                             -- Go language server
 -- vim.lsp.enable('rust_analyzer')                     -- Rust language server
 
 
