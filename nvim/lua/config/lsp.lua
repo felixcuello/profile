@@ -1,6 +1,9 @@
 --
 -- LSP Configurations
 --
+-- Configurations for LSP servers and their capabilities, can be found in the
+-- LSPConfig configuration -> https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/configs
+--
 local vim = vim
 
 ------------------------------------------------------------------------------------
@@ -11,6 +14,7 @@ vim.lsp.enable('ruby_lsp')                          -- Ruby language server
 vim.lsp.enable('clangd')                            -- C/C++ language server
 vim.lsp.enable('pyright')                           -- Python language server
 vim.lsp.enable('gopls')                             -- Go language server
+vim.lsp.enable('texlab')                            -- LaTeX language server
 -- vim.lsp.enable('rust_analyzer')                     -- Rust language server
 
 
