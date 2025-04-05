@@ -2,7 +2,7 @@
 
 return {
   -- Dark themes ----------------------------------------------------------------
-  { 'ofirgall/ofirkai.nvim', },
+  { 'ofirgall/ofirkai.nvim', lazy = false },
   { 'sainnhe/sonokai' },
   { 'scottmckendry/cyberdream.nvim' },
   { 'tiagovla/tokyodark.nvim' },

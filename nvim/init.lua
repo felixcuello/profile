@@ -1,25 +1,11 @@
 -------------------------------------------------------------------------------
 -- Neovim 0.11 configuration
---
--- This configuration requires an order, if you change the loading order this
--- might not work. I am not a LUA expert; I tried to be as simpler as possible
--- creating building blocks I can copy and paste to some other configurations
--- if needed
---
 -------------------------------------------------------------------------------
+local vim = vim
 
---
--- MAIN Configurations
---
 require('config.lazy')                             -- Load Lazy plugin manager
 require('config.general')                          -- General vim configurations
 require('config.remaps')                           -- Keymaps
+require('config.lsp')                              -- LSP configurations
 
---
--- LSP Servers
---
-require('lsp.luals')                               -- Lua language server
-require('lsp.clangd')                              -- C/C++ language server
-require('lsp.pyright')                             -- Python language server
-require('lsp.ruby_lsp')                            -- Ruby language server
-require('lsp.rust_analyzer')                       -- Rust language server
+vim.cmd('colorscheme cyberdream')

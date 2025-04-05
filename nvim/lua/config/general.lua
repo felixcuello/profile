@@ -3,7 +3,6 @@ local vim = vim
 vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
 vim.cmd('set number')
-vim.cmd('colorscheme ofirkai-darkblue')
 
 ----------------------------------------------------------------
 -- General Settings
@@ -14,6 +13,7 @@ vim.opt.textwidth = 120                                              -- Text wid
 
 vim.cmd('highlight ColorColumn ctermbg=NONE guibg=#200090')
 
+vim.opt.winborder = 'rounded'                                        -- Window border
 vim.opt.expandtab = true                                             -- Use spaces instead of tabs
 vim.opt.hlsearch = true                                              -- Keep highlighted text when searching and after
 vim.opt.ignorecase = true                                            -- Ignore case when searching (use with smartcase)
