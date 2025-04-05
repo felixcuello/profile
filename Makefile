@@ -54,10 +54,10 @@ install_lsp_servers:
 	@brew install pyright
 	@echo "  - ruby-lsp [Ruby LSP]"
 	@brew install ruby-lsp
+	@echo "  - sql-language-server [SQL LSP]"
+	@brew install sql-language-server
 	@echo "  - rust-analyzer [Rust LSP]"
 	@brew install rust-analyzer
-	@echo "  - solargraph [Ruby LSP]"
-	@brew install solargraph
 	@echo "  - texlab [LaTeX LSP]"
 	@brew install texlab
 	@echo "  - typescript-language-server [TypeScript LSP]"

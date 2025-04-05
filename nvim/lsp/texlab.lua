@@ -1,5 +1,5 @@
 --
--- LaTeX Language Server
+-- LSP Configuration for LaTeX
 --
 return {
   cmd = { 'texlab' },

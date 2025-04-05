@@ -1,3 +1,6 @@
+--
+-- LSP Configuration for Lua
+--
 return {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },

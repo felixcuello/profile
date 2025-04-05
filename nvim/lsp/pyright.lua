@@ -1,3 +1,6 @@
+--
+-- LSP Configuration for Python
+--
 return {
   cmd = { 'pyright-langserver', '--stdio' },
   filetypes = { 'python' },
