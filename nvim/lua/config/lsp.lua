@@ -14,11 +14,13 @@ vim.lsp.enable('dockerls')                          -- Docker language server
 vim.lsp.enable('gopls')                             -- Go language server
 vim.lsp.enable('luals')                             -- LUA LSP server
 vim.lsp.enable('pyright')                           -- Python language server
+vim.lsp.enable('rubocop')                           -- Ruby language server
 vim.lsp.enable('ruby_lsp')                          -- Ruby language server
 vim.lsp.enable('rust_analyzer')                     -- Rust language server
+vim.lsp.enable('sorbet')                            -- Sorbet language server
+vim.lsp.enable('sqlls')                             -- SQL language server
 vim.lsp.enable('texlab')                            -- LaTeX language server
 vim.lsp.enable('tsls')                              -- TypeScript language server
-vim.lsp.enable('sqlls')                             -- SQL language server
 
 
 ------------------------------------------------------------------------------------
