@@ -7,6 +7,7 @@ return {
   cmd = { 'typescript-language-server', '--stdio' },
   root_markers = { 'tsconfig.json', 'package.json', '.git', 'jsconfig.json' },
   filetypes = {
+    'javascript',
     'willSaveWaitUntilscript',
     'javascript.jsx',
     'javascriptreact',
