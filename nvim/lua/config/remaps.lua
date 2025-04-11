@@ -15,21 +15,27 @@ vim.keymap.set('n', 'gA', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 vim.keymap.set('n', 'gF', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 
 vim.keymap.set('n', '<leader>q', function()
-  -- closes the current buffer
-  -- if the current buffer is a neotree buffer, it will toggle the neotree
   local bufname = vim.api.nvim_buf_get_name(0)
   if bufname:match('neo%-tree') then
-    vim.cmd('Neotree toggle')
+    vim.cmd('Neotree close')
+    vim.cmd('bdelete')
   else
-    vim.cmd('bd')
+    vim.cmd('bdelete')
   end
-end, { desc = "Conditional buffer action for <leader>q" })
+end)
+
+vim.keymap.set('n', '<leader>Q', function()
+  local bufname = vim.api.nvim_buf_get_name(0)
+  if bufname:match('neo%-tree') then
+    vim.cmd('Neotree close')
+    vim.cmd('bdelete!')
+  else
+    vim.cmd('bdelete!')
+  end
+end)
 
 vim.keymap.set("n", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
 vim.keymap.set("v", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
-
-vim.keymap.set("n", "<leader>q", ":bw<Cr>")                                      -- Close buffer
-vim.keymap.set("n", "<leader>Q", ":bd!<Cr>")                                     -- Force close buffer
 
 vim.keymap.set("v", "<leader>y", "\"+y")                                         -- Copy to MacOS clipboard
 
