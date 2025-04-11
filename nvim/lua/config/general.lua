@@ -2,11 +2,10 @@ local vim = vim
 
 vim.opt.guifont = "VictorMono Nerd Font:h20"                         -- Font
 
-vim.cmd('set number')
-
 ----------------------------------------------------------------
 -- General Settings
 ----------------------------------------------------------------
+vim.cmd('set number')
 vim.opt.backup = false                                               -- Do not backup
 vim.opt.colorcolumn = "120"                                          -- Long column indicator
 vim.opt.textwidth = 120                                              -- Text width
