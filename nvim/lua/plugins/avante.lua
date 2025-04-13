@@ -6,7 +6,7 @@ return {
     { "<leader>aa", "<Cmd>AvanteAsk<Cr>", mode = { "n", "v" } },        -- Open Avante Ask
     { "<leader>af", "<Cmd>AvanteFocus<Cr>", mode = { "n", "v" } },      -- Focus Avante
     { "<leader>as", "<Cmd>AvanteStop<Cr>", mode = { "n", "v" } },       -- Stop Avante
-    { "<leader>cc", "<Cmd>AvanteAsk Change this default commit message from this diff and replace it with a tailored commit message for the git diff with these restrictions: 1. Title must be 50 characters or less 2. Body must wrap at 72 characters 3. No author or co-author lines 4. Include a summary of changes<Cr>", mode = { "n" } }, -- Generate commit message
+    { "<leader>cc", "<Cmd>AvanteAsk Please read the buffer and replace the git diff with the corresponding commit message for this change. The commit change must have a title 50 characters long, and a body that wraps at 72 characters with the proposed changes. The body should be formatted as a list of changes. The commit message should not include any author or co-author lines. Thanks!<Cr>", mode = { "n" } }, -- Generate commit message
   },
   opts = {
     provider = "copilot",
