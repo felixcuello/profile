@@ -19,6 +19,7 @@ vim.keymap.set('n', '<leader>q', function()
   if bufname:match('neo%-tree') then
     vim.cmd('Neotree close')
     vim.cmd('bdelete')
+    vim.cmd('Neotree show')
   else
     vim.cmd('bdelete')
   end
