@@ -35,10 +35,11 @@ return {
         align = "center", -- left, center, right for title
         rounded = true,
       },
-      input = {
-        prefix = "> ",
-        height = 8, -- Height of the input window in vertical layout
-      },
+      -- I liked the default, but I comment out this section for future references
+      -- input = {
+      --   prefix = "> ",
+      --   height = 8, -- Height of the input window in vertical layout
+      -- },
       edit = {
         border = "rounded",
         start_insert = true, -- Start insert mode when opening the edit window
