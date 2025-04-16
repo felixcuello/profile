@@ -45,6 +45,7 @@ vim.keymap.set("v", "<S-UP>", ":m '<-2<CR>gv=gv")                               
 
 vim.keymap.set("n", "<C-x>1", "<C-w>o")                                          -- Close all other windows
 
+vim.keymap.set("n", "<leader>gt", ":GitBlameToggle<Cr>")                         -- ToggleBlame
 vim.keymap.set("n", "<leader>gy", ":GitBlameCopyFileURL<Cr>")                    -- Copy file URL to clipboard
 vim.keymap.set("v", "<leader>gy", ":GitBlameCopyFileURL<Cr>")                    -- Copy file URL to clipboard
-vim.keymap.set("n", "<leader>gc", ":GitBlameOpenCommitURL<Cr>")                  -- Open commit URL
+vim.keymap.set("v", "<leader>gY", ":GitBlameOpenFileURL<Cr>")                    -- Copy file URL to clipboard
