@@ -35,6 +35,10 @@ vim.keymap.set('n', '<leader>Q', function()
   end
 end)
 
+vim.keymap.set("v", "<D-c>", "\"+y")                                             -- Copy to MacOS clipboard
+vim.keymap.set("i", "<D-v>", "<Esc>k\"+p<Esc>i")                                  -- Paste from MacOS clipboard
+vim.keymap.set("n", "<D-v>", "k\"+p")                                             -- Paste from MacOS clipboard
+
 vim.keymap.set("n", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
 vim.keymap.set("v", "<leader>tt", ":Telescope<Cr>")                              -- Toggle telescope
 
